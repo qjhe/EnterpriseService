@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <link href="css/adStyle.css" rel="stylesheet"/>
+	    <link href="js/lightbox/source/jquery.fancybox.css" rel="stylesheet">
+	    <link href="js/lightbox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" rel="stylesheet">
+	    <style type="text/css">
+	    .fancybox-margin{margin-right:17px;}
+	    .es-cbinput1.gray{background: #ccc;}
+	    </style>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body style="background: #f6f6f6;">
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>
+		    <ul class="es-nav fl">
+		        <li>首页</li>
+		    	<li class="active">企业信息</li>
+		        <li>角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+				<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+				<a href="javascript:;">退出</a>
+		    </div>
+		</div>  
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex">
+			<div class="es-acc-nav fl">
+				<ul class="es-acc-box">
+					<li>
+						<a href="#">资金托管</a>
+					</li>
+					<li>
+						<a href="#">修改密码</a>
+					</li>
+					<li>
+						<a class="active" href="#">银行卡管理</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-content">
+				<h1 class="es-cb-tit es-cb-tit1"><em></em>添加银行卡</h1>
+				<div class="es-cb-tab-conBank">
+					<div class="m-line"></div>
+					<ul>
+						<li class="active"><a href="javascript:;">企业银行卡</a></li>
+						<li><a href="javascript:;">法人银行卡</a></li>
+						<li><a href="javascript:;">股东银行卡</a></li>
+					</ul>
+				</div>
+				<div class="es-cb-con es-cb-conBank">
+				<div class="es-cb-con-list" style="display:block;">
+					<!-- 企业银行卡 -->
+					<form action="" method="post">
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">企业名称</span>
+								<input type="text" name="" id="enprsName" value="" placeholder="请输入企业名称" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行名称</span>
+								<select name="" id="bankName" class="es-cbinput">
+									<option value="-1">请选择银行</option>
+									<option value="光大银行">光大银行</option>
+									<option value="中信银行">中信银行</option>
+									<option value="华夏银行">华夏银行</option>
+									<option value="浦发银行">浦发银行</option>
+									<option value="民生银行">民生银行</option>
+									<option value="平安银行">平安银行</option>
+									<option value="兴业银行">兴业银行</option>
+								</select>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">开户行</span>
+								<input type="text" name="" id="bankAct" value="" placeholder="请输入开户行" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">开户行所在地</span>
+								<div id="city_2" class="es-city-choice" style="display: inline-block">
+									<select class="address_sele prov" id="prov" name="prov" style="width:125px;"><option value="-1">请选择</option></select>
+									<select class="address_sele city" id="city" name="city"  style="width:125px;"><option value="-1">请选择</option></select>
+									<input type="hidden" id="provName" name="provName" value="1"/>
+									<input type="hidden" id="cityName" name="cityName" value="2"/>
+								</div>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">联行号</span>
+								<input type="text" name="" id="contNum" value="" placeholder="请输入联行号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行账号</span>
+								<input type="text" name="" id="bankNum" value="" placeholder="请输入银行账号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">开户证明材料</span>
+								<label for="es-file1" class="upLoadBtn">上传文件</label>
+								<strong class="es-sample-graph">
+		                        	<span><i></i><img src="/images/yltk/1.jpg" alt="示例图"/></span>
+		                        	<font>样例</font>
+		                        </strong>
+								<input type="file" accept=".gif,.png,.jpg" name="file" id="es-file1">
+								<p class="es-cb-bank-up-tip">（图片格式：支持jpg/gif/png）<br>（图片需小于1M）</p>
+
+								<div id="imagesDiv" class="ad-picBoxCon clearFiex" style="margin-left:121px;">
+									<div class='ad-picCon'><span onclick='del(this)'>删除</span>
+										<div class='es-pic'>
+											<img src='images/espic_03.jpg'>
+											<input type='hidden' name='filePaths' value='images/espic_03.jpg'>
+										</div>
+										<div class='ad-hoverBox' data-fancybox-group='thumb' href="images/espic_03.jpg" data-href='${request.getContextPath()!'..'}/files/downLoadFile?filePath=" + data.filePath + "&t=" + new Date().getTime()+"' data-fancybox-type='image' rel='lightbox-myGroup'><div class='ad-con'></div></div>
+									</div>
+									<div class='ad-picCon'><span onclick='del(this)'>删除</span>
+										<div class='es-pic'>
+											<img src='images/espic_03.jpg'>
+											<input type='hidden' name='filePaths' value='images/espic_03.jpg'>
+										</div>
+										<div class='ad-hoverBox' data-fancybox-group='thumb' href="images/espic_03.jpg" data-href='${request.getContextPath()!'..'}/files/downLoadFile?filePath=" + data.filePath + "&t=" + new Date().getTime()+"' data-fancybox-type='image' rel='lightbox-myGroup'><div class='ad-con'></div></div>
+									</div>
+								</div>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						
+						<div class="es-cb-item es-cb-con-bank-agreement">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<a href="javascript:;">《松鼠普惠提现绑卡服务协议》</a>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="button" name="" id="es-comBtn" value="确定" class="es-cbinput1 gray"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="es-cb-con-list">
+					<!-- 法人银行卡 -->
+					<form action="" method="post">
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">法人姓名</span>
+								<input type="text" name="" id="corpName" value="" placeholder="请输入法人姓名" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">身份证号</span>
+								<input type="text" name="" id="idNum" value="" placeholder="请输入身份证号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行名称</span>
+								<select name="" id="bankName_f" class="es-cbinput">
+									<option value="-1">请选择银行</option>
+									<option value="光大银行">光大银行</option>
+									<option value="中信银行">中信银行</option>
+									<option value="华夏银行">华夏银行</option>
+									<option value="浦发银行">浦发银行</option>
+									<option value="民生银行">民生银行</option>
+									<option value="平安银行">平安银行</option>
+									<option value="兴业银行">兴业银行</option>
+								</select>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行账号</span>
+								<input type="text" name="" id="bankNum_f" value="" placeholder="请输入银行账号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+
+						<div class="es-cb-item es-cb-con-bank-agreement">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<a href="javascript:;">《松鼠普惠提现绑卡服务协议》</a>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="button" name="" id="es-comBtn_f" value="确定" class="es-cbinput1 gray"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="es-cb-con-list">
+					<!-- 股东银行卡 -->
+					<form action="" method="post">
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">股东姓名</span>
+								<input type="text" name="" id="sharName" value="" placeholder="请输入股东姓名" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">身份证号</span>
+								<input type="text" name="" id="idNum_s" value="" placeholder="请输入身份证号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行名称</span>
+								<select name="" id="bankName_s" class="es-cbinput">
+									<option value="-1">请选择银行</option>
+									<option value="光大银行">光大银行</option>
+									<option value="中信银行">中信银行</option>
+									<option value="华夏银行">华夏银行</option>
+									<option value="浦发银行">浦发银行</option>
+									<option value="民生银行">民生银行</option>
+									<option value="平安银行">平安银行</option>
+									<option value="兴业银行">兴业银行</option>
+								</select>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">银行账号</span>
+								<input type="text" name="" id="bankNum_s" value="" placeholder="请输入银行账号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						
+						<div class="es-cb-item es-cb-con-bank-agreement">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<a href="javascript:;">《松鼠普惠提现绑卡服务协议》</a>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="button" name="" id="es-comBtn_s" value="确定" class="es-cbinput1 gray"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="reg-card-contract">
+			<h3>松鼠普惠提现绑卡服务协议<a class="rcc-close" href="javascript:;"></a> </h3>
+			<div class="rcc-wrap">
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普，恒善普惠信息咨询有效公司北京恒善普，恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+				<p>北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司北京恒善普惠信息咨询有效公司,北京恒善普惠信息咨询有效公司</p>
+			</div>
+			<p class="rcc-operation">
+				<a href="javascript:;">同意</a>
+			</p>
+		</div>
+		<div class="meba"></div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lightbox/source/jquery.fancybox.js"></script>
+		<script src="js/lightbox/source/helpers/jquery.fancybox-buttons.js"></script>
+		<script src="js/lightbox/source/helpers/jquery.fancybox-thumbs.js"></script>
+		<script src="js/lightbox/source/helpers/jquery.fancybox-media.js"></script>
+		<script src="js/bankPayJson.js"></script>
+		<script src="js/esValidate.js"></script>
+		<script type="text/javascript">
+			//错误提示信息
+		    function errorInfoShow(obj, msg) {
+		        obj.show();
+		        if (msg != "") {
+		            obj.removeClass("es-right").addClass("es-error");
+		            obj.find("span").html(msg);
+		        } else {
+		            obj.removeClass("es-error").addClass("es-right");
+		            obj.find("span").html(msg);
+		        }
+		    }
+		    $(".es-cbinput").on("focus", function () {
+		        $(this).addClass("active");
+		        $(this).parent().siblings(".es-cb-info").addClass("active");
+		    })
+		    $(".es-cbinput").on("blur", function () {
+		        $(this).removeClass("active");
+		        $(this).parent().siblings(".es-cb-info").removeClass("active");
+		    })
+		    var iMv = new mValidate();
+		    
+		   
+		   var enprsName=$("#enprsName"),//企业名称
+		   		bankName=$("#bankName"),//银行名称
+		   		bankAct=$("#bankAct"),// 开户行
+		   		city_2=$("#city_2"),prov=$("#prov"),city=$("#city"),//开户行所在地   prov省   city市
+		   		contNum=$("#contNum"),// 联行号
+		   		bankNum=$("#bankNum"),//银行账号
+		   		esFile1=$("#es-file1"),//开户证明材料
+		   		esComBtn=$("#es-comBtn"),
+		   		
+		   		corpName=$("#corpName"),//法人姓名
+		   		idNum=$("#idNum"),//身份证号
+		   		bankName_f=$("#bankName_f"),//银行名称
+		   		bankNum_f=$("#bankNum_f"),//银行账号
+		   		esComBtn_f=$("#es-comBtn_f"),
+		   		
+		   		
+		   		sharName=$("#sharName"),//股东姓名
+		   		idNum_s=$("#idNum_s"),//身份证号
+		   		bankName_s=$("#bankName_s"),//银行名称
+		   		bankNum_s=$("#bankNum_s"),//银行账号
+		   		esComBtn_s=$("#es-comBtn_s");
+		   		
+		   		
+		   		iMv.pMoney(contNum),
+		   		iMv.pMoney(bankNum),
+		   		iMv.pMoney(bankNum_f),
+		   		iMv.pMoney(bankNum_s);
+		   		var validateForm_ =function(){//验证方法
+				}
+				validateForm_.prototype={
+					enprsName:function(type){//企业名称
+						if (!iMv.isEmpty(enprsName.val())) {//验证空
+							var iObj = enprsName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入企业名称");
+							return false;
+						}else{
+							var iObj = enprsName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankName:function(type){//银行名称
+						if(bankName.val()==-1){
+							var iObj = bankName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+							return false;
+						}else{
+							var iObj = bankName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankAct:function(type){//企业名称
+						if (!iMv.isEmpty(bankAct.val())) {//验证空
+							var iObj = bankAct.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入开户行");
+							return false;
+						}else{
+							var iObj = bankAct.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					accouPlace:function(type){//开户行所在地
+						if(prov.val()==-1 || city.val()==-1){//
+							var iObj = city_2.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请选择开户行所在地");
+							return false;
+						}else{
+							var iObj = city_2.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					contNum:function(type){//转入金额
+						if (!iMv.isEmpty(contNum.val())) {//验证空
+							var iObj = contNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入转入金额");
+							return false;
+						}else{
+							var iObj = contNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankNum:function(type){//银行账号
+						if (!iMv.isEmpty(bankNum.val())) {//验证空
+							var iObj = bankNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入银行账号");
+							return false;
+						}else{
+							var iObj = bankNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					esFile1:function(type){
+						if(esFile1.val()==""){
+							var iObj = esFile1.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请添加开户证明材料");
+							return false;
+						}else{
+							var iObj = esFile1.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					corpName:function(type){
+						if (!iMv.isEmpty(corpName.val())) {
+							var iObj = corpName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入法人姓名");
+							return false;
+						}else{
+							var iObj = corpName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					idNum:function(type){
+						if (!iMv.isEmpty(idNum.val())) {
+							var iObj = idNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入法人身份证号");
+							return false;
+						}
+						if (!_idcardno(idNum.val())) {//
+							var iObj = idNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "身份证号码格式错误");
+							return false;
+						}else{
+							var iObj = idNum.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankName_f:function(type){
+						if(bankName_f.val()==-1){
+							var iObj = bankName_f.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+							return false;
+						}else{
+							var iObj = bankName_f.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankNum_f:function(type){//银行账号
+						if (!iMv.isEmpty(bankNum_f.val())) {
+							var iObj = bankNum_f.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入银行账号");
+							return false;
+						}else{
+							var iObj = bankNum_f.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					sharName:function(type){
+						if (!iMv.isEmpty(sharName.val())) {
+							var iObj = sharName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入股东姓名");
+							return false;
+						}else{
+							var iObj = corpName.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					idNum_s:function(type){
+						if (!iMv.isEmpty(idNum_s.val())) {
+							var iObj = idNum_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入法人身份证号");
+							return false;
+						}
+						if (!_idcardno(idNum_s.val())) {
+							var iObj = idNum_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "身份证号码格式错误");
+							return false;
+						}else{
+							var iObj = idNum_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankName_s:function(type){
+						if(bankName_s.val()==-1){
+							var iObj = bankName_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+							return false;
+						}else{
+							var iObj = bankName_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					},
+					bankNum_s:function(type){//银行账号
+						if (!iMv.isEmpty(bankNum_s.val())) {//验证空
+							var iObj = bankNum_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "请输入银行账号");
+							return false;
+						}else{
+							var iObj = bankNum_s.siblings(".es-error-msg");
+							if(type!=1) errorInfoShow(iObj, "");
+						}
+						return true;
+					}
+				}
+		   	//绑定验证信息
+			var iV = new validateForm_();
+		   /*企业银行 s*/
+		  enprsName.on("blur input",function(){
+				iV.enprsName();
+				higBtnFun();
+			});
+		  bankName.on("blur input",function(){
+				iV.bankName();
+				higBtnFun();
+		    });
+		  bankAct.on("blur input",function(){
+				iV.bankAct();
+				higBtnFun()
+		  });
+		  prov.on("blur input",function(){
+				iV.accouPlace();
+				higBtnFun();
+				
+		  });
+		  city.on("blur input",function(){
+				iV.accouPlace();
+				higBtnFun();
+		  });
+		  contNum.on("blur input",function(){
+				iV.contNum();
+				higBtnFun();
+		  });
+		  bankNum.on("blur input",function(){
+				iV.bankNum();
+				higBtnFun();
+		  });
+		  esFile1.on("blur input",function(){
+				iV.esFile1();
+				higBtnFun();
+		  });
+		  
+		  function higBtnFun(){
+		  	if(iV.enprsName(1)&&iV.bankName(1)&&iV.bankAct(1)&&iV.accouPlace(1)&&iV.contNum(1)&&iV.bankNum(1)&&iV.esFile1(1)){
+		  		esComBtn.removeClass("gray").off("click").on("click",function(){
+
+				})
+		  	}else{
+		  		esComBtn.off("click")
+		  	}
+		  }
+		  
+		  /*法人银行 s*/
+		 corpName.on("blur input",function(){
+				iV.corpName();
+				higBtnFun_f();
+		  });
+		  idNum.on("blur input",function(){
+				iV.idNum();
+				higBtnFun_f();
+		  });
+		  bankName_f.on("blur input",function(){
+				iV.bankName_f();
+				higBtnFun_f()
+		  });
+		  bankNum_f.on("blur input",function(){
+				iV.bankNum_f();
+				higBtnFun_f()
+		  });
+		  
+		  function higBtnFun_f(){
+		  	if(iV.corpName(1)&&iV.idNum(1)&&iV.bankName_f(1)&&iV.bankNum_f(1)){
+		  		esComBtn_f.removeClass("gray").off("click").on("click",function(){alert(1)})
+		  	}else{
+		  		esComBtn_f.off("click")
+		  	}
+		  }
+		 /*股东银行 s*/
+		sharName.on("blur input",function(){
+				iV.sharName();
+				higBtnFun_s();
+		  });
+		  idNum_s.on("blur input",function(){
+				iV.idNum_s();
+				higBtnFun_s();
+		  });
+		  bankName_s.on("blur input",function(){
+				iV.bankName_s();
+				higBtnFun_s()
+		  });
+		  bankNum_s.on("blur input",function(){
+				iV.bankNum_s();
+				higBtnFun_s()
+		  });
+		  
+		  function higBtnFun_s(){
+		  	if(iV.sharName(1)&&iV.idNum_s(1)&&iV.bankName_s(1)&&iV.bankNum_s(1)){
+		  		esComBtn_s.removeClass("gray").off("click").on("click",function(){alert(1)})
+		  	}else{
+		  		esComBtn_s.off("click")
+		  	}
+		  }
+		</script>
+<script>
+//跟随动画 cObj父级框 lObj运动元素 需为jq对象 correct矫正值
+var tabs = function(cObj,lObj,correct){
+	this.obj = cObj;   // parent element
+	this.line = lObj;  //运动元素
+	this.lineLeft = 0; 
+	this.lineWidth = 0;
+	this.index = 0;	   
+	this.objOffset = 0;
+	this.correct = correct || 0;
+	this.childrenObj= null;
+	
+	this.init = function(){
+		var _this = this;
+		_this.objOffset = _this.obj.offset().left;
+		_this.childrenObj = _this.obj.children();
+		_this.index = _this.obj.find(".active").index()==-1?0:_this.obj.find(".active").index();//记录当前索引
+		
+		_this.setActive(_this.index , !1);
+		
+		_this.childrenObj.on("mouseover",function(){
+			_this.setActive($(this).index() , !0);
+		})
+		
+		_this.obj.on("mouseout",function(){
+			_this.setActive(_this.index , !0);	
+		})
+			
+	};
+	
+	this.setActive = function(i,flg){
+		var _this = this;
+		if( _this.correct==="0" ){
+			_this.lineLeft = _this.childrenObj.eq(i).offset().left;
+		}else{
+			_this.lineLeft = _this.childrenObj.eq(i).offset().left - _this.obj.offset().left + _this.correct;
+		}
+		_this.lineWidth = _this.childrenObj.eq(i).width() - 1;
+		
+		if(flg){//动画达到当前位置
+			_this.line.stop(!0 , !1).animate({width:_this.lineWidth,left:_this.lineLeft},300);
+		}else{//直接设置当前位置
+			_this.line.css({"width":_this.lineWidth+"px","left":_this.lineLeft+"px"})
+		}
+		
+	};
+	
+}
+//切换
+function fnTab(oNav,aCon,iActive,callback){
+    var oElem=oNav.children();
+    var aElem=aCon.children();
+
+    //aElem.hide().eq(0).show();
+
+    oElem.each(function(index, element) {
+        if(iActive=='click'){
+            $(this).click(function(){
+                aElem.hide().eq(index).show();
+                oElem.removeClass("active").eq(index).addClass("active");
+                callback&&callback(this,index);
+            });
+        }
+        if(iActive=='hover'){
+            $(this).hover(function(){
+                aElem.hide().eq(index).show();
+                oElem.removeClass("active").eq(index).addClass("active");
+                callback&&callback(this,index);
+            },function(){});
+        }
+    });
+}
+</script>
+<script>
+//tab切换动画
+var t1= new tabs( $(".es-cb-tab-conBank ul") , $('.m-line') );
+t1.init();
+
+// b.fnTab
+fnTab($(".es-cb-tab-conBank ul"),$(".es-cb-con"),"click",function(){
+	t1.init();
+});//投资类型
+
+
+var json =  eval(jsonData());//银行信息
+var limitMoney = 10000000;
+	//三级联动开始
+	var province=[{"city":"北京市","cityID":110000,"fatherID":1,"id":13309,"type":1},{"city":"天津市","cityID":120000,"fatherID":1,"id":13310,"type":1},{"city":"河北省","cityID":130000,"fatherID":1,"id":13311,"type":1},{"city":"山西省","cityID":140000,"fatherID":1,"id":13312,"type":1},{"city":"内蒙古自治区","cityID":150000,"fatherID":1,"id":13313,"type":1},{"city":"辽宁省","cityID":210000,"fatherID":1,"id":13314,"type":1},{"city":"吉林省","cityID":220000,"fatherID":1,"id":13315,"type":1},{"city":"黑龙江省","cityID":230000,"fatherID":1,"id":13316,"type":1},{"city":"上海市","cityID":310000,"fatherID":1,"id":13317,"type":1},{"city":"江苏省","cityID":320000,"fatherID":1,"id":13318,"type":1},{"city":"浙江省","cityID":330000,"fatherID":1,"id":13319,"type":1},{"city":"安徽省","cityID":340000,"fatherID":1,"id":13320,"type":1},{"city":"福建省","cityID":350000,"fatherID":1,"id":13321,"type":1},{"city":"江西省","cityID":360000,"fatherID":1,"id":13322,"type":1},{"city":"山东省","cityID":370000,"fatherID":1,"id":13323,"type":1},{"city":"河南省","cityID":410000,"fatherID":1,"id":13324,"type":1},{"city":"湖北省","cityID":420000,"fatherID":1,"id":13325,"type":1},{"city":"湖南省","cityID":430000,"fatherID":1,"id":13326,"type":1},{"city":"广东省","cityID":440000,"fatherID":1,"id":13327,"type":1},{"city":"广西壮族自治区","cityID":450000,"fatherID":1,"id":13328,"type":1},{"city":"海南省","cityID":460000,"fatherID":1,"id":13329,"type":1},{"city":"重庆市","cityID":500000,"fatherID":1,"id":13330,"type":1},{"city":"四川省","cityID":510000,"fatherID":1,"id":13331,"type":1},{"city":"贵州省","cityID":520000,"fatherID":1,"id":13332,"type":1},{"city":"云南省","cityID":530000,"fatherID":1,"id":13333,"type":1},{"city":"西藏自治区","cityID":540000,"fatherID":1,"id":13334,"type":1},{"city":"陕西省","cityID":610000,"fatherID":1,"id":13335,"type":1},{"city":"甘肃省","cityID":620000,"fatherID":1,"id":13336,"type":1},{"city":"青海省","cityID":630000,"fatherID":1,"id":13337,"type":1},{"city":"宁夏回族自治区","cityID":640000,"fatherID":1,"id":13338,"type":1},{"city":"新疆维吾尔自治区","cityID":650000,"fatherID":1,"id":13339,"type":1}];
+//<#-- ${provJson} -->
+	var city=[];//<#if cityJson??>${cityJson}<#else>[]</#if>;
+	function getCity(fatherID, selId){
+	 	$.ajax({  
+            type : "GET",  //提交方式  
+            dataType: "json",
+            url : "${request.getContextPath()!'..'}/common/city/city?fatherID=" + fatherID,//路径  
+            success : function(result) {//返回数据根据结果进行相应的处理  
+            	var data = eval(result);
+            	myAddress(data, selId);
+            }  
+        });  
+	};
+//先加载默认省市县
+myAddress(province,"#prov");//显示省
+myAddress(city,"#city");//显示市
+
+//二级联动
+$("#prov").on("change",function(){
+	var i=$(this).val();
+	if(i==-1){
+		myAddress(address_null,"#city");//清楚市
+		$("#provName").val("");
+		$("#cityName").val("");
+		$("#prov").val("-1");
+		$("#city").val("-1");
+	}else{
+		getCity(i,"#city");//显示市
+	}
+});
+
+$("#prov").on("change",function(){$("#provName").val($("#prov :checked").html());});
+$("#city").on("change",function(){$("#cityName").val($("#city :checked").html());});
+
+function myAddress(data,el){
+	var str='<option value="-1">请选择</option>';
+	for(var i=0,len=data.length;i<len;i++){
+		str+='<option value="'+data[i].cityID+'">'+data[i].city+'</option>';
+	}
+	$(el).html(str);
+}	
+
+
+refreshFancybox();
+// 上传文件
+$(function(){  
+	bindChange('es-file1',"path10");
+})
+function bindChange(fileInputName, saveInput){
+	 // $("body").on('change', '#'+fileInputName ,function() {  
+	 $("#"+fileInputName).off('change').on('change',function() {  
+        uploadFile(fileInputName, saveInput);
+        return false;
+    }); 
+}
+//上传
+function uploadFile(fileInputName, saveInput){
+	saveInput = new Date().getTime();
+	$.ajaxFileUpload
+    (
+        {
+            // url: '${request.getContextPath()!'..'}/files/upload?name=' + saveInput, //用于文件上传的服务器端请求地址
+            secureuri: false, //是否需要安全协议，一般设置为false
+            fileElementId: fileInputName, //文件上传域的ID
+            // dataType: 'json', //返回值类型 一般设置为json
+            dataType: 'text', //返回值类型 一般设置为json
+            success: function (data, status)  //服务器成功响应处理函数
+            {
+            	bindChange('es-file1','path10');
+            	if(Object.prototype.toString.call(data)=="[object HTMLDocument]"){
+            	    data=JSON.parse(data.getElementsByTagName("pre")[0].innerHTML);
+            	}else if(Object.prototype.toString.call(data)=="[object String]"){
+            		data=JSON.parse((function(){var oDiv=document.createElement("div");oDiv.innerHTML=data;if(oDiv.getElementsByTagName("pre")[0]){return oDiv.getElementsByTagName("pre")[0].innerHTML}})());
+            	}else{
+            	    data=data;
+            	}
+            	if('success'==data.result){
+            		var imageHtml = "<div class='ad-picCon'><span onclick='del(this)'>删除</span>"
+            					+" 		<div class='es-pic'>"
+								+" 			<img src='" + data.url + "'>"
+								+" 			<input type='hidden' name='filePaths' value='" + data.url+"'>"
+								+" 		</div>"
+								+" 		<div class='ad-hoverBox' data-fancybox-group='thumb' href='${request.getContextPath()!'..'}/files/downLoadFile?filePath=" + data.filePath + "&t=" + new Date().getTime()+"' data-fancybox-type='image' rel='lightbox-myGroup'><div class='ad-con'></div></div>"
+								+" </div>";
+            		$("#imagesDiv").append(imageHtml);
+            	}else if('lager'==data.result){
+            		alert("文件格式不对请重新上传");
+            	}else{
+            		alert("上传失败，请核对图片后重新上传！");
+            	}
+            	// getBtnType();
+            	refreshFancybox();
+            },
+            error: function (data, status, e)//服务器响应失败处理函数
+            {
+            	bindChange('es-file1','path10');
+                alert("上传失败，请核对图片后重新上传！");
+            }
+        }
+    )
+}
+
+function refreshFancybox(){
+	$('.ad-hoverBox').fancybox({
+	    openEffect  : 'none',
+	    closeEffect : 'none',
+	
+	    prevEffect : 'none',
+	    nextEffect : 'none',
+	
+	    closeBtn  : true,
+	
+	    tpl: {
+	        next: '<a href="javascript:;" class="next-a ac-unselect">&gt;</a>',
+	        prev: '<a href="javascript:;" class="next-b ac-unselect">&lt;</a>'
+	    },
+	
+	    helpers : {
+	        thumbs : {
+	            width  : 50,
+	            height : 50
+	        }
+	    },
+	
+	    afterLoad : function() {
+	        this.title = (this.index + 1) + ' / ' + this.group.length + (this.title ? '  ' + this.title : '');
+	    }
+	});
+}
+
+//删除
+function del(obj){
+	$(obj).parent().hide();
+	$(obj).parent().remove();
+	getBtnType();
+	refreshFancybox();
+}
+//合同弹框
+function saveForm(){
+	$(".meba,.reg-card-contract").show();
+}
+$(".rcc-close").click(function(){
+	$(".meba,.reg-card-contract").hide();
+});
+//设置导航栏高度
+setNavHeight();
+</script>
+</body>
+</html>

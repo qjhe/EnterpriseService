@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>企业管理-证书编号</title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	</head>
+	<body style="background-color:#f6f6f6; ">
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>                                    
+		    <ul class="es-nav fl">
+		    	<li>首页</li>
+		    	<li>企业信息</li>
+		        <li class="active">角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+	    		<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+	    		<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex">
+			<div class="es-acc-nav fl">
+				<ul class="es-acc-box">
+					<li>
+						<a class="active" href="#">资金托管</a>
+					</li>
+					<li>
+						<a href="#">修改密码</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-content">
+				<div class="es-acc-tit">
+					<h4 class="es-acc-c4tit fl"><span></span>开通“易宝支付”资金托管账户</h4>
+					<span class="fl"><img src="images/essh.png"/></span>
+					<span class="es-acc-state fl"><em></em>已开通</span>
+				</div>
+				<div class="es-acc-fromarea">
+					<div class="es-c-binfo fl">
+						<form action="" method="post" id="cb-form">
+							<div class="es-cb-item">
+								<div class="es-cb-input clearFiex">
+									<span class="es-cb-name">真实姓名</span>
+									<input disabled type="text" name="relName" id="relName" value="" placeholder="请输入真实姓名" class="es-cbinput" autocomplete="off">
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">身份证号</span>
+									<input disabled type="text" name="relCard" id="relCard" value="" placeholder="请输入身份证号码" class="es-cbinput" autocomplete="off">
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">&nbsp;</span>
+									<input disabled type="button" name="" id="" value="立即开通" class="es-cbinput1 disabled">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="es-open-acc-tips fl">
+						<h3><em></em>开通资金托管的优势</h3>
+						<p class="es-acc-tips-item">1.使用第三方资金托管平台托管用户资金，更安全</p>
+						<p class="es-acc-tips-item">2.未经用户本人同意，任何人无权使用托管资金</p>
+						<p class="es-acc-tips-item">3.用户资金与平台进行有效隔离</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #f6f6f6;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+		<script type="text/javascript">
+			var iMv = new mValidate();
+			var relName = $("#relName"),relCard=$("#relCard");
+			var validateForm_ = function(){}//验证方法
+			validateForm_.prototype= {
+				relName: function () {//供应链
+					if (!iMv.isEmpty(relName.val())) {//验证空
+						var iObj = relName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入真实姓名");
+						return false;
+					}else{
+						var iObj = relName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				relCard: function () {//所属类型
+					if (!iMv.isEmpty(relCard.val())) {//验证空
+						var iObj = relCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入身份证号码");
+						return false;
+					}
+					if (!_idcardno(relCard.val())) {//
+						var iObj = relCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "身份证号码格式错误");
+						return false;
+					}else{
+						var iObj = relCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				}
+			};
+			//绑定验证信息
+			var iV = new validateForm_();
+			relName.on("blur input",function(){
+				iV.relName();
+			});
+			relCard.on("blur input",function(){
+				iV.relCard();
+			});
+			//提交表单
+			$(".es-cbinput1").on("click",function(){
+				if( iV.relName()&&iV.relCard() ){
+					alert("验证通过");
+				}
+			});
+			//设置导航栏高度
+			setNavHeight();
+		</script>
+	</body>
+</html>

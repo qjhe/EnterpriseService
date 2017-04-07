@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>大额-申请费用</title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <link href="css/adStyle.css" rel="stylesheet"/>
+		<link href="js/lightbox/source/jquery.fancybox.css" rel="stylesheet">
+		<link href="js/lightbox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" rel="stylesheet" />
+	</head>
+	<body style="background-color:#f6f6f6; ">
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>                                    
+		    <ul class="es-nav fl">
+		    	<li>首页</li>
+		    	<li>企业信息</li>
+		        <li class="active">角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+	    		<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+	    		<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex whitebg">
+			<div class="es-acc-nav fl">
+				<ul class="es-acc-box">
+					<li>
+						<a  class="active" href="#">支付管理</a>
+					</li>
+					<li>
+						<a href="#">大额报销</a>
+					</li>
+					<li>
+						<a href="#">自助报销</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-content">
+				<div class="ad-tipBox">
+					<p class="ad-tipCon"><span class="ad-icon"></span><span class="ad-tiptxt">审核失败</span>您上传的法人身份信息与法人姓名不一致，请重新上传！</p>
+				</div>
+				<div class="ad-acci-item">
+					<div class="ad-stateBox">
+						<!-- state1:成功、state2:失败、state1:审核中 -->
+						<ul>
+							<li class="ad-1">
+								<span class="ad-img"></span><span class="ad-filter"></span>
+								<div class="ad-txt">提交信息</div>
+							</li>
+							<li class="ad-2 state3">
+								<span class="ad-img"></span><span class="ad-filter"></span>
+								<div class="ad-txt"><span class="ad-t1">审核成功</span><span class="ad-t2">审核失败</span><span class="ad-t3">审核中</span></div>
+							</li>
+							<li class="ad-3 state2">
+								<span class="ad-img"></span><span class="ad-filter"></span>
+								<div class="ad-txt"><span class="ad-t1">审核成功</span><span class="ad-t2">审核失败</span><span class="ad-t3">审核中</span></div>
+							</li>
+							<li class="ad-4 state1">
+								<span class="ad-img"></span><span class="ad-filter"></span>
+								<div class="ad-txt"><span class="ad-t1">审核成功</span><span class="ad-t2">审核失败</span><span class="ad-t3">审核中</span></div>
+							</li>
+							<li class="ad-5">
+								<span class="ad-img"></span>
+								<div class="ad-txt"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ad-acci-item">
+					<div class="es-acci-itemcon">
+						<!-- 收款人信息 -->
+						<h2 class="es-acci-tit1 es-acci-tit2"><em class="iconReLin"></em>收款人信息</h2>
+						<div class="ad-myBox">
+							<ul>
+								<li>
+									<label for="">收款人名称</label>
+									<input id="sName" type="text" class="ad-ipt">
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">银行账号</label>
+									<input id="bCode" type="text" class="ad-ipt">
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">银行名称</label>
+									<input id="bName" type="text" class="ad-ipt">
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">银行地址</label>
+									<input id="bAddress" type="text" class="ad-ipt">
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+							</ul>
+						</div>
+			            <h2 class="es-acci-tit1 es-acci-tit2"><em class="iconReLin"></em>项目信息</h2>
+						<div class="ad-myBox">
+							<ul>
+								<li>
+									<label for="">项目名称</label>
+									<select name="" id="pName" class="ad-ipt">
+										<option value="-1">请选择</option>
+										<option value="1">超级工程</option>
+									</select>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">付款货币</label>
+									<select name="" id="pCur" class="ad-ipt">
+										<option value="-1">请选择</option>
+										<option value="1">人民币</option>
+									</select>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">付款金额</label>
+									<span class="ad-ipt-box"><input id="pMoney" type="text" class="ad-ipt">元</span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+							</ul>
+						</div>
+			            <h2 class="es-acci-tit1 es-acci-tit2"><em class="iconReLin"></em>支付凭证</h2>
+						<div class="ad-myBox">
+							<ul>
+								<li>
+									<label for="">上传发票</label>
+									<input type="button" id="" value="选择附件" class="ad-file" onclick="$('#es-file-z').click();"><span class="ad-file-txt">图片格式：支持jpg/gif/png<br/>图片需小于1M</span>
+									<input type="file" name="" id="es-file-z" value="" hidden="hidden">
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+									<div class="ad-picBoxCon clearFiex">
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+										<div class="ad-picCon">
+											<span>删除</span>
+											<div class="es-pic">
+												<img src="images/espic_03.jpg">
+											</div>
+											<div class="ad-hoverBox" data-fancybox-group="thumb" href="./images/content/qua.jpg" title="项目文件一" rel="lightbox-myGroup"><div class="ad-con"></div></div>
+										</div>
+									</div>
+									<div id="btnNext" class="ad-btn" style="margin-left:158px;margin-top:40px;">提交审核</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="ad-acci-item">
+					<div class="es-acci-itemcon">
+						<h2 class="es-acci-tit1 es-acci-tit3">审核人意见区</h2>
+						<div class="ad-myBox2">
+							<dl class="succ clearFiexHidden">
+								<dt><span>审核<br>通过</span></dt>
+								<dd>
+									<p><span class="ad-department">审核人：<span class="ad-orange">财务部</span></span>审核时间：2016.01.09 10:09<br><br>审核意见：同意</p>
+								</dd>
+							</dl>
+							<div class="hrline"></div>
+							<dl class="err clearFiexHidden">
+								<dt><span>审核<br>失败</span></dt>
+								<dd>
+									<p><span class="ad-department">审核人：<span class="ad-orange">财务部</span></span>审核时间：2016.01.09 10:09<br><br>审核意见：<span class="ad-red">你什么因为什么什么什么反正审核失败了额么什么反正审核失败了额</span></p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #f6f6f6;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script src="js/lightbox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="js/lightbox/source/jquery.fancybox.js"></script>
+<script src="js/lightbox/source/helpers/jquery.fancybox-buttons.js"></script>
+<script src="js/lightbox/source/helpers/jquery.fancybox-thumbs.js"></script>
+<script src="js/lightbox/source/helpers/jquery.fancybox-media.js"></script>
+<script type="text/javascript">
+//数据验证部分 S
+var iMv = new mValidate();
+var sName=$("#sName"),bCode=$("#bCode"),bName=$("#bName"),bAddress=$("#bAddress"),pName=$("#pName"),pCur=$("#pCur"),pMoney=$("#pMoney");
+iMv.pMoney(pMoney);
+var validateForm_ =function(){//验证方法
+}
+validateForm_.prototype={
+	sName:function(type){//收款人姓名
+		var iObj=sName.siblings(".es-error-msg");
+		if (!iMv.isEmpty(sName.val())) {//验证空
+			if(type!=1) errorInfoShow(iObj, "请输入收款人姓名");
+			return false;
+		}else if(!iMv.vSecName(sName.val())) {
+			if(type!=1) errorInfoShow(iObj, "姓名只能为汉字、英文和分隔号“·”且不能以“·”开头或结尾");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+	bCode:function(type){//银行账号
+		var iObj=bCode.siblings(".es-error-msg");
+		if (!iMv.isEmpty(bCode.val())) {//验证空
+			if(type!=1) errorInfoShow(iObj, "请输入银行账号");
+			return false;
+		}else if (!iMv.vBnum(bCode.val())) {//验格式 数字
+			if(type!=1) errorInfoShow(iObj, "请输入正确的银行账号");
+			return false;
+		}{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+	bName:function(type){//银行名称
+		var iObj=bName.siblings(".es-error-msg");
+		if (!iMv.isEmpty(bName.val())) {//验证空
+			if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+	bAddress:function(type){//银行地址
+		var iObj=bAddress.siblings(".es-error-msg");
+		if (!iMv.isEmpty(bAddress.val())) {//验证空
+			if(type!=1) errorInfoShow(iObj, "请填写银行地址");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+
+	pName:function(type){//项目名称
+		var iObj=pName.siblings(".es-error-msg");
+		if( pName.val()=="-1" ){
+			if(type!=1) errorInfoShow(iObj, "请选择所属供应链");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+	pCur:function(type){//付款货币
+		var iObj=pCur.siblings(".es-error-msg");
+		if( pCur.val()=="-1" ){
+			if(type!=1) errorInfoShow(iObj, "请选择所属类型");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	},
+	pMoney:function(type){//付款金额
+		var iObj=pMoney.parent().siblings(".es-error-msg");
+		if (!iMv.isEmpty(pMoney.val())) {//验证空
+			if(type!=1) errorInfoShow(iObj, "请输入付款金额");
+			return false;
+		}else{
+			if(type!=1) errorInfoShow(iObj, "");
+		}
+		return true;
+	}
+};
+//绑定验证信息
+var iV = new validateForm_();
+sName.on("blur input",function(){iV.sName();});
+bCode.on("blur input",function(){iV.bCode();})
+bName.on("blur input",function(){iV.bName();});
+bAddress.on("blur input",function(){iV.bAddress();});
+pName.on("blur input",function(){iV.pName();});
+pCur.on("blur input",function(){iV.pCur();});
+pMoney.on("blur input",function(){iV.pMoney();});
+
+//下一步$("#btnNext").on("click",aaa);
+//提交表单
+function saveForm(){
+	if( iV.sName()&&iV.bCode()&&iV.bName()&&iV.bAddress()&&iV.pName()&&iV.pCur()&&iV.pMoney() ){
+		//$("#infoForm").submit();
+		alert(0)
+	}
+}
+getBtnType();
+function getBtnType(){
+	if( iV.sName(1)&&iV.bCode(1)&&iV.bName(1)&&iV.bAddress(1)&&iV.pName(1)&&iV.pCur(1)&&iV.pMoney(1) ){
+		$("#btnNext").removeClass("disabled").off("click").on("click",saveForm);
+	}else{
+		$("#btnNext").addClass("disabled").off("click");
+	}
+}
+//数据验证部分 E
+//设置导航栏高度
+setNavHeight();
+$('.ad-hoverBox').fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none',
+
+    prevEffect : 'none',
+    nextEffect : 'none',
+
+    closeBtn  : true,
+
+    tpl: {
+        next: '<a href="javascript:;" class="next-a ac-unselect">&gt;</a>',
+        prev: '<a href="javascript:;" class="next-b ac-unselect">&lt;</a>'
+    },
+
+    helpers : {
+        thumbs : {
+            width  : 50,
+            height : 50
+        }
+    },
+
+    afterLoad : function() {
+        this.title = (this.index + 1) + ' / ' + this.group.length + (this.title ? '  ' + this.title : '');
+    }
+});
+</script>
+</body>
+</html>

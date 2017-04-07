@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>大额-申请费用</title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <link href="css/adStyle.css" rel="stylesheet"/>
+	    <link rel="stylesheet" type="text/css" href="css/home.css"/>
+	</head>
+	<body style="background-color:#f6f6f6; ">
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>                                    
+		    <ul class="es-nav fl">
+		    	<li>首页</li>
+		    	<li>企业信息</li>
+		        <li class="active">角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+	    		<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+	    		<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex whitebg">
+			<div class="es-acc-nav fl">
+				<ul class="es-acc-box">
+					<li>
+						<a class="active" href="#">支付管理</a>
+					</li>
+					<li>
+						<a href="#">大额报销</a>
+					</li>
+					<li>
+						<a href="#">自助报销</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-content" style="padding-left: 20px;">
+				<div class="c-i-tabs">
+		        	<div class="b-line"></div>
+		            <ul class="boin-tab border-bottom boin-tab-traAc">
+		                <li class="active"><a href="javascript:;">转账到松鼠金融账户</a></li>
+		                <li><a href="javascript:;">转账到理财账户</a></li>
+		                <li><a href="javascript:;">转账到银行卡</a></li>
+		            </ul>
+		        </div>
+		        <div class="u-oper-box">
+		        	<!--转账到松鼠金融账户-->
+		        	<div class="u-transAccou-item ad-myBox">
+		        		<form action="" method="post" id="trfForm1">
+		        			<ul>
+								<li>
+									<label for="">松鼠金融账户</label>
+									<span class="trfAc-cont"><em>100.00</em>元</span>
+									<div class="dema-check pos">
+	                					<span class="dema-tip pos" id="balcLow1"><i>!</i>可用余额不足</span>
+	                					 <a class="ac-line-btn" href="javascript:;">充值</a>
+	                				</div>
+								</li>
+								<li>
+									<label for="">收款人姓名</label>
+									<select name="payeeName" class="ad-ipt" id="payeeName">
+										<option value="-1">请选择收款人姓名</option>
+										<option value="0">张三1</option>
+										<option value="1">张三2</option>
+										<option value="2">张三3</option>
+									</select>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="tfAmount">转入金额</label>
+									<span class="ad-ipt-box"><input id="tfAmount" name="tfAmount" type="text" class="ad-ipt">元</span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">&nbsp;</label>
+									<span class="ad-btn org disabled" id="cofirTrf1"/>确认转账</span>
+								</li>
+							</ul>
+		        		</form>
+		        	</div>
+		        	<!--转账到理财账户-->
+		        	<div class="u-transAccou-item ad-myBox"  style="display: none;">
+		        		<form action="" method="post" id="trfForm2">
+		        			<ul>
+								<li>
+									<label for="">松鼠金融账户</label>
+									<span class="trfAc-cont"><em>100.00</em>元</span>
+									<div class="dema-check pos">
+	                					<span class="dema-tip pos" id="balcLow2"><i>!</i>可用余额不足</span>
+	                					 <a class="ac-line-btn" href="javascript:;">充值</a>
+	                				</div>
+								</li>
+								<li>
+									<label for="tfAmount2">转入理财账户金额</label>
+									<span class="ad-ipt-box"><input id="tfAmount2" name="tfAmount2" type="text" class="ad-ipt">元</span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li>
+									<label for="">&nbsp;</label>
+									<span class="ad-btn org disabled" id="cofirTrf2"/>确认转账</span>
+								</li>
+							</ul>
+		        		</form>
+		        	</div>
+		        	<div class="u-transAccou-item ad-myBox" style="display:none;">
+		        		<form action="" method="post" id="trfForm3">
+		        		<!--首次转到卡 s-->
+		        		<ul style="display: ;">
+							<li>
+								<label for="">松鼠金融账户</label>
+								<span class="trfAc-cont"><em>100.00</em>元</span>
+								<div class="dema-check pos">
+                					<span class="dema-tip pos" id="balcLow3"><i>!</i>可用余额不足</span>
+                					 <a class="ac-line-btn" href="javascript:;">充值</a>
+                				</div>
+							</li>
+							<li>
+								<label for="">收款方</label>
+								<span class="ad-ipt-box"><input id="" name="" type="text" class="ad-ipt" value="个体户" readonly="readonly"></span>
+							</li>
+							<li>
+								<label for="">银行名称</label>
+								<!--<select name="" class="ad-ipt" id="bankSelt">
+									<option value="-1">请选择银行名称</option>
+									<option value="0">银行1</option>
+									<option value="1">银行2</option>
+									<option value="2">银行3</option>
+								</select>-->
+								<div class="ad-ipt-box">
+									<input type="text" name="bankInp" id="bankInp" placeholder="可选择也可输入银行" class="ad-ipt-bankInp"><img src="images/selectIcon.png" class="selectBtn" alt="" style="cursor:pointer;">
+									<div class="ad-drop-down-box" id="bankSelet"></div>
+								</div>
+								<p class="es-error-msg  es-error-msga">
+									<em></em>
+									<span></span>
+								</p>
+							</li>
+							<li>
+								<label for="bankAccount">银行账号</label>
+								<span class="ad-ipt-box"><input id="bankAccount" name="bankAccount" type="text" class="ad-ipt"/></span>
+								<p class="es-error-msg  es-error-msga">
+									<em></em>
+									<span></span>
+								</p>
+							</li>
+							<li>
+								<label for="tfAmount3">转入金额</label>
+								<span class="ad-ipt-box"><input id="tfAmount3" name="" type="text" class="ad-ipt">元</span>
+								<p class="es-error-msg  es-error-msga">
+									<em></em>
+									<span></span>
+								</p>
+							</li>
+							<li style="padding-bottom: 10px;">
+								<label for="amount">手续费:</label>
+								<span class="">2.00元</span>								
+							</li>
+							<li>
+								<dl class="ur-item-wrap clearFiex t-ur-item-wrap ">
+				                    <dt class="ur-i-kk fl">
+				                    	<p class="u-a-t"><span class="ac-ico"></span>账户实扣款金额：</p>
+				                        <div class="f-msg-info">
+				                        	<p>账户实扣款金额=提现金额+手续费</p>
+				                        	<font class="ac-i-s"><i class="ac-i-c">◇</i></font>
+				                        </div>
+				                    </dt>
+				                    <dd class="fl" data-count="0.00"><span class="ur-i-rt marle11" id="payMoneyi">531055.68 元</span></dd>
+				                </dl>							
+							</li>
+							<li>
+								<label for="">&nbsp;</label>
+								<span class="ad-btn org disabled" id="cofirTrf3"/>确认转账</span>
+							</li>
+						</ul>
+						</form>
+						<!--首次转到卡e-->
+						<!--非首次转到卡 s-->
+						<form action="" method="post" id="trfForm32">
+						<div class="trfcardBox" style="display: none;" >
+							<ul>
+								<li>
+									<label for="">松鼠金融账户</label>
+									<span class="trfAc-cont"><em>100.00</em>元</span>
+									<div class="dema-check pos">
+	                					<span class="dema-tip pos" id="balcLow32"><i>!</i>可用余额不足</span>
+	                					 <a class="ac-line-btn" href="javascript:;">充值</a>
+	                				</div>
+								</li>
+								<li class="clearfix" style="padding-bottom: 10px;">
+									<label for="" class="fl">选择银行卡</label>
+									<dl class="fl bankcardList">
+										<dt><a href="javascript:;" class="bankbtn active">
+											<img src="images/account/BOC.png" data-ban="BOC" alt="中国银行">
+											<span>尾号：1234</span>
+										</a></dt>
+										<dt><a href="javascript:;" class="bankbtn">
+											<img src="images/account/BOC.png" data-ban="BOC" alt="中国银行">
+											<span>尾号：1234</span>
+										</a></dt>
+										<dt><a href="javascript:;" class="bankbtn">
+											<img src="images/account/BOC.png" data-ban="BOC" alt="中国银行">
+											<span>尾号：1234</span>
+										</a></dt>
+									</dl>
+									<span class="addBakbtn" id="addBakbtn"> + 添加银行卡</span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+							</ul>
+							<ul class="addBanUl">
+								<li class="addBanLi">
+									<label for="recevPrty32">收款方</label>
+									<span class="ad-ipt-box"><input id="recevPrty32" name="" type="text" class="ad-ipt"></span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li class="addBanLi">
+									<label for="bankSelt32">银行名称</label>
+									<select name="" class="ad-ipt" id="bankSelt32">
+										<option value="-1">请选择银行名称</option>
+										<option value="0">张三1</option>
+										<option value="1">张三2</option>
+										<option value="2">张三3</option>
+									</select>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li class="addBanLi">
+									<label for="bankAccount32">银行账号</label>
+									<span class="ad-ipt-box"><input id="bankAccount32" name="bankAccount32" type="text" class="ad-ipt"></span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<label for="tfAmount32">转账金额</label>
+									<span class="ad-ipt-box"><input id="tfAmount32" name="tfAmount32" type="text" class="ad-ipt">元</span>
+									<p class="es-error-msg  es-error-msga">
+										<em></em>
+										<span></span>
+									</p>
+								</li>
+								<li style="padding-bottom: 10px;">
+									<label for="amount">手续费:</label>
+									<span class="">2.00元</span>								
+								</li>
+								<li>
+									<dl class="ur-item-wrap clearFiex t-ur-item-wrap ">
+					                    <dt class="ur-i-kk fl">
+					                    	<p class="u-a-t"><span class="ac-ico"></span>账户实扣款金额：</p>
+					                        <div class="f-msg-info">
+					                        	<p>账户实扣款金额=提现金额+手续费</p>
+					                        	<font class="ac-i-s"><i class="ac-i-c">◇</i></font>
+					                        </div>
+					                    </dt>
+					                    <dd class="fl" data-count="0.00"><span class="ur-i-rt marle11" id="payMoneyi32">0.00 元</span></dd>
+					                </dl>							
+								</li>
+								<li>
+									<label for="">&nbsp;</label>
+									<span class="ad-btn org disabled" id="cofirTrf32"/>提交</span>
+								</li>
+							</ul>
+						</div>
+						<!--非首次转到卡 s-->
+		        		</form>
+		        	</div>
+		        </div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #f6f6f6;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script src="js/bombBoxi.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+// 银行名称 start
+var data=['中国工商银行','中国建设银行','中国银行','交通银行','中国农业银行','招商银行','邮政储蓄银行','光大银行','民生银行','平安银行','浦发银行','中信银行','兴业银行','华夏银行','广发银行','北京银行'];
+var bankInpEl=$("#bankInp");
+var bankTime="";
+bankInpEl.click(function(){$(this).focus()});
+bankInpEl.focus(function(){
+	bankInpFun.call(bankInpEl[0]);
+	$("#bankSelet").show();
+	bankInpEl.parent().css("border","1px solid #0099cf");
+});
+bankInpEl.blur(function(){
+	bankTime=window.setTimeout(function(){
+		$("#bankSelet").hide();
+		bankInpEl.parent().css("border","1px solid #d5d5d5");
+	},200);
+});
+$(".selectBtn").on("click",function(){
+	clearTimeout(bankTime);bankTime=null;
+	bankInpEl.focus();
+	bankInpFun.call({value:""});
+});
+$("#bankSelet").on("click","li",function(){
+	bankInpEl.val($(this).html());
+	// $("#bankInpKey").val($(this).attr("data-value"));
+});
+function bankInpFun(){
+	bankInpEl.off("propertychange");//ie8 bug 
+	var arr=[];
+	for(var i=0,len=data.length;i<len;i++){
+		if(data[i].search($.trim(this.value))!=-1){
+			arr.push(data[i]);
+		}
+	}
+	var html='<ul>';
+	for(i=0,len=arr.length;i<len;i++){
+		html+='<li>'+arr[i]+'</li>'
+	}
+	html+='</ul>';
+	if(arr.length==0){
+		$("#bankSelet").html('<p>搜索结果为空</p>');
+	}else{
+		$("#bankSelet").html(html);
+	}
+	bankInpEl.on("propertychange",bankInpFun);
+}
+bankInpEl.on("input propertychange",bankInpFun);
+// 银行名称 end
+
+var isAdd=1;
+$("#addBakbtn").on("click",function(){
+	if(isAdd==1){
+	$(".addBakbtn").text(" - 取消")
+	$(".addBanUl").slideDown();
+	getBtnType32();
+	
+	return isAdd=2;
+	}else{
+		$(".addBanUl").slideUp();
+		$(".addBakbtn").text(" + 添加银行卡");
+		getBtnType3();
+		return isAdd=1;
+	}
+})
+//数据验证部分 S
+	var iMv = new mValidate();
+	var payeeName=$("#payeeName"),
+		tfAmount=$("#tfAmount"),
+		balcLow1=$("#balcLow1"),
+		balcLow2=$("#balcLow2"),
+		tfAmount2=$("#tfAmount2"),
+		bankInp=$("#bankInp"),
+		bankSelet=$("#bankSelet"),
+		bankAccount=$("#bankAccount"),
+		tfAmount3=$("#tfAmount3"),
+		recevPrty32=$("#recevPrty32"),
+		bankSelt32=$("#bankSelt32"),
+		bankAccount32=$("#bankAccount32"),
+		tfAmount32=$("#tfAmount32"),
+		balcLow32=$("#balcLow32");
+	iMv.pMoney(tfAmount),
+	iMv.pMoney(tfAmount2),
+	iMv.pMoney(tfAmount3),
+	iMv.pMoney(tfAmount32);
+	var validateForm_ =function(){//验证方法
+	}
+	validateForm_.prototype={
+		payeeName:function(type){//收款人姓名1
+			var iObj=payeeName.siblings(".es-error-msg");
+			if (payeeName.val()=="-1") {//验证空
+				if(type!=1) errorInfoShow(iObj, "请选择收款人姓名");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		tfAmount:function(type){//转入金额1
+			var iObj=tfAmount.parent().siblings(".es-error-msg");
+			if (!iMv.isEmpty(tfAmount.val())) {//验证空
+				if(type!=1) errorInfoShow(iObj, "请输入转入金额");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		tfAmount2:function(type){//转入金额2
+			var iObj=tfAmount2.parent().siblings(".es-error-msg");
+			if (!iMv.isEmpty(tfAmount2.val())) {//验证空
+				if(type!=1) errorInfoShow(iObj, "请输入转入金额");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		bankInp:function(type){//银行名称3（首次）
+			var iObj=bankInp.parent().parent().siblings(".es-error-msg");
+			if (bankInp.val()=="" && bankSelet.val()=="-1" && bankInp.val()!="--请选择--") {//验证空
+				if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		tfAmount3:function(type){//转入金额3（首次）
+			var iObj=tfAmount3.parent().siblings(".es-error-msg");
+			if (!iMv.isEmpty(tfAmount3.val())) {//验证空
+				if(type!=1) errorInfoShow(iObj, "请输入转入金额");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		bankAccount:function(type){//银行账号3（首次）
+			var iObj=bankAccount.parent().siblings(".es-error-msg");
+			if(!iMv.isEmpty(bankAccount.val())){
+				if(type!=1) errorInfoShow(iObj,"请输入银行账号");
+				return false
+			}else if(!iMv.isNum(bankAccount.val())){
+				if(type!=1) errorInfoShow(iObj,"银行账号格式不对");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj,"");
+			}
+			return true;
+		},
+		recevPrty32:function(type){//收款人32（非首次）
+			var iObj=recevPrty32.parent().siblings(".es-error-msg");
+			if (!iMv.isEmpty(recevPrty32.val())) {//验证空
+				if(type!=1) errorInfoShow(iObj, "请输入收款人");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		bankSelt32:function(type){//银行名称32（非首次）
+			var iObj=bankSelt32.siblings(".es-error-msg");
+			if (bankSelt32.val()=="-1") {//验证空
+				if(type!=1) errorInfoShow(iObj, "请选择银行名称");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		tfAmount32:function(type){//转入金额3（非首次）
+			var iObj=tfAmount32.parent().siblings(".es-error-msg");
+			if (!iMv.isEmpty(tfAmount32.val())) {//验证空
+				if(type!=1) errorInfoShow(iObj, "请输入付款金额");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj, "");
+			}
+			return true;
+		},
+		bankAccount32:function(type){//银行账号3（首次）
+			var iObj=bankAccount32.parent().siblings(".es-error-msg");
+			if(!iMv.isEmpty(bankAccount32.val())){
+				if(type!=1) errorInfoShow(iObj,"请输入银行账号");
+				return false
+			}else if(!iMv.isNum(bankAccount32.val())){
+				if(type!=1) errorInfoShow(iObj,"银行账号格式不对");
+				return false;
+			}else{
+				if(type!=1) errorInfoShow(iObj,"");
+			}
+			return true;
+		}
+	};
+	//绑定验证信息
+	var iV = new validateForm_();
+	/*转账到松鼠金融 s*/
+	payeeName.on("blur input",function(){iV.payeeName();getBtnType();});//收款人姓名
+	tfAmount.on("blur input",function(){iV.tfAmount();getBtnType();});//转出金额
+	getBtnType();
+	function getBtnType(){
+		var isFull=($("#balcLow1").css("display")=="block");
+		if(isFull){
+			$("#cofirTrf1").addClass("disabled").off("click");
+			return false;
+		}
+		if( !isFull&&iV.payeeName(1)&&iV.tfAmount(1)){
+			$("#cofirTrf1").removeClass("disabled").off("click").on("click",saveForm);
+		}else{
+			$("#cofirTrf1").addClass("disabled").off("click");
+		}
+	}
+	//提交表单
+	function saveForm(){
+		if( iV.payeeName()&&iV.tfAmount()){
+			$("#trfForm1").submit();
+		}
+	}
+	/*转账到松鼠金融 e*/
+	/*转账到理财 s*/
+	tfAmount2.on("blur input",function(){iV.tfAmount2();getBtnType2();});//转出金额
+	getBtnType2();
+	function getBtnType2(){
+		var isFull2=($("#balcLow2").css("display")=="block");
+		if(isFull2){
+			$("#cofirTrf2").addClass("disabled").off("click");
+			return false;
+		}
+		
+		if( iV.tfAmount2(1)){
+			$("#cofirTrf2").removeClass("disabled").off("click").on("click",saveForm2);
+		}else{
+			$("#cofirTrf2").addClass("disabled").off("click");
+		}
+	}
+	//提交表单
+	function saveForm2(){
+		if( iV.tfAmount2()){
+			$("#trfForm2").submit();
+		}
+	}
+	/*转账到理财 e*/
+	/*转账到银行卡 首次s*/
+	bankInp.on("input propertychange keyup paste blur",function(){iV.bankInp();getBtnType3()});
+	bankSelet.on("input propertychange keyup paste blur",function(){iV.bankInp();getBtnType3()});
+	bankAccount.on("blur input",function(){iV.bankAccount();getBtnType3()});
+	tfAmount3.on("blur input",function(){
+		iV.tfAmount3();
+		var iVal=$(this).val();
+		$("#payMoneyi").html( ( iVal==""?"0.00":(parseFloat(iVal)+2)  ) + " 元" );
+		getBtnType3();});//转出金额
+	
+	getBtnType3();
+	function getBtnType3(){
+		var isFull3=($("#balcLow3").css("display")=="block");
+		if(isFull3){
+			$("#cofirTrf3").addClass("disabled").off("click");
+			return false;
+		}
+		if( iV.bankInp(1)&&iV.bankAccount(1)&&iV.tfAmount3(1)){
+			$("#cofirTrf3").removeClass("disabled").off("click").on("click",saveForm3);
+		}else{
+			$("#cofirTrf3").addClass("disabled").off("click");
+		}
+	}
+	//提交表单
+	function saveForm3(){
+		if( iV.tfAmount3()){
+			$("#trfForm3").submit();
+		}
+	}
+	/*转账到银行卡 首次e*/
+	/*转账到银行卡 非首次s*/
+	recevPrty32.on("blur input",function(){iV.recevPrty32();getBtnType32()});
+	bankSelt32.on("blur input",function(){iV.bankSelt32();getBtnType32()});
+	bankAccount32.on("blur input",function(){iV.bankAccount32();getBtnType32()});
+	tfAmount32.on("blur input",function(){
+		iV.tfAmount32();
+		var iVal=$(this).val();
+		$("#payMoneyi32").html( ( iVal==""?"0.00":(parseFloat(iVal)+2)  ) + " 元" );
+		getBtnType32();});//转出金额
+	getBtnType32();
+	function getBtnType32(){
+		var isFull32=($("#balcLow32").css("display")=="block");
+		if(isFull32){
+			$("#cofirTrf32").addClass("disabled").off("click");
+			return false;
+		}
+		if($(".addBanUl").css("display")=="none"){
+			if( iV.tfAmount32(1)){
+				$("#cofirTrf32").removeClass("disabled").off("click").on("click",saveForm32);
+			}else{
+				$("#cofirTrf32").addClass("disabled").off("click");
+			}
+		}else{
+			if( iV.recevPrty32(1)&&iV.bankSelt32(1)&&iV.bankAccount32(1)&&iV.tfAmount32(1)){
+				$("#cofirTrf32").removeClass("disabled").off("click").on("click",saveForm32);
+			}else{
+				$("#cofirTrf32").addClass("disabled").off("click");
+			}
+		}
+		
+	}
+	//提交表单
+	function saveForm32(){
+		if( iV.recevPrty32()&&iV.bankSelt32()&&iV.bankAccount32()&&iV.tfAmount32()){
+			$("#trfForm32").submit();
+		}
+	}
+	/*转账到银行卡 非首次e*/
+	
+	//数据验证部分 E
+
+//展示银行卡信息
+$(".bankcardList dt a").each(function(i,e){
+	$(this).click(function(){
+		var bankType = $(".bankcardList dt a img").eq(i).data("ban"); 
+		$(".bankcardList dt a").removeClass("active").eq(i).addClass("active");
+	})
+})
+//实例化
+var t1= new tabs( $(".c-i-tabs ul") , $('.b-line') , 0 );
+fnTab($(".boin-tab"),$(".u-oper-box"),"click",function(){
+	 t1.init();
+});
+t1.init();
+//设置导航栏高度
+setNavHeight();
+</script>
+</body>
+</html>

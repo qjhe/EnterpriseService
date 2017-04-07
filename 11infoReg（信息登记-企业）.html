@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 企业信息登记</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item active">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo es-cc-binfo">
+						<form id="" action="http://www.baidu.com" method="post">
+							<ul class="es-sh-type">
+								<li><a class="active" href="javascript:;" data-type="0">供应链</a></li>
+								<li><a href="javascript:;" data-type="1">保理公司</a></li>
+								<li><a href="javascript:;" data-type="2">普通用户</a></li>
+							</ul>
+							<div class="es-sel-area">
+								<div class="es-cb-inputNew">
+									<em class="addBtn fisPos"></em>
+									<div class="es-cb-item">
+										<div class="es-cb-input clearFiex">
+											<span class="es-cb-name">所属核心企业</span>
+											<select class="es-select-bi es-se-bin selGyl selCor">
+												<option value="-1">请选择核心企业</option>
+												<option value="1">1111</option>
+												<option value="2">2222</option>
+											</select>
+											<em class="delBtn"></em>
+											<p class="es-error-msg er-right"><em></em><span></span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">企业名称</span>
+									<input type="text" name="cName" id="cName" value="" placeholder="请填写企业名称" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">信息审核审核成功后，企业名称不可修改。</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input s-cb-input-radio">
+									<span class="es-cb-name">是否三证合一</span>
+									<label><input checked name="radEca" type="radio" data-type="0">&nbsp;是</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input name="radEca" type="radio" data-type="1">&nbsp;否</label>
+								</div>
+								<p class="es-cb-info">请输入18位的统一社会信用代码</p>
+							</div>
+							<div class="es-cert-type">
+								<div class="es-cb-item">
+									<div class="es-cb-input">
+										<span class="es-cb-name">统一社会信用代码</span>
+										<input type="text" name="socialCredit" id="socialCredit" value="" placeholder="请填写统一社会信用代码" class="es-cbinput" autocomplete="off"/>
+										<p class="es-error-msg"><em></em><span></span></p>
+									</div>
+									<p class="es-cb-info">请输入18位的统一社会信用代码</p>
+								</div>
+							</div>
+							<div class="es-cert-type" style="display: none;">
+								<div class="es-cb-item">
+									<div class="es-cb-input">
+										<span class="es-cb-name">营业执照编号</span>
+										<input type="text" name="busLic" id="busLic" value="" placeholder="请填写营业执照编号" class="es-cbinput" autocomplete="off"/>
+										<p class="es-error-msg"><em></em><span></span></p>
+									</div>
+									<p class="es-cb-info">请输入正确的营业执照注册号</p>
+								</div>
+								<div class="es-cb-item">
+									<div class="es-cb-input">
+										<span class="es-cb-name">组织机构代码</span>
+										<input type="text" name="orgIns" id="orgIns" value="" placeholder="请填写组织机构代码" class="es-cbinput" autocomplete="off"/>
+										<p class="es-error-msg"><em></em><span></span></p>
+									</div>
+									<p class="es-cb-info">请输入正确的组织机构代码</p>
+								</div>
+								<div class="es-cb-item">
+									<div class="es-cb-input">
+										<span class="es-cb-name">税务登记号</span>
+										<input type="text" name="Tax" id="Tax" value="" placeholder="请填写税务登记号" class="es-cbinput" autocomplete="off"/>
+										<p class="es-error-msg"><em></em><span></span></p>
+									</div>
+									<p class="es-cb-info">请输入正确的税务登记号</p>
+								</div>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">开户银行许可证</span>
+									<input type="text" name="bankPermit" id="bankPermit" value="" placeholder="请填写开户银行许可证" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">代码由数字和字母组成，共18位</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">法人姓名</span>
+									<input type="text" name="corName" id="corName" value="" placeholder="请填写法人姓名" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">如果名字包含分隔号“·”，请勿省略</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">法人身份证号</span>
+									<input type="text" name="corCard" id="corCard" value="" placeholder="请填写法人身份证号" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">身份证号为18位，若最后一位是X，请大写</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">开户名</span>
+									<input type="text" name="accName" id="accName" value="" placeholder="请填写开户名" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">开户名称为企业名称</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">开户行</span>
+									<input type="text" name="accBank" id="accBank" value="" placeholder="请填写开户行" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">如招商银行股份有限公司北京建国门支行</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">开户账号</span>
+									<input type="text" name="accNum" id="accNum" value="" placeholder="请填写开户账号" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">代码由数字和字母组成，共18位</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">企业联系人</span>
+									<input type="text" name="busContacts" id="busContacts" value="" placeholder="请填写企业联系人姓名" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">如果名字包含分隔号“·”，请勿省略</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">联系人手机号</span>
+									<input type="text" name="cPhone" id="cPhone" value="" placeholder="请填写联系人手机号" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">11位数字手机号或注册手机号</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">联系人邮箱</span>
+									<input type="text" name="cEmail" id="cEmail" value="" placeholder="请填写联系人邮箱" class="es-cbinput" autocomplete="off"/>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">1222@xxxx.com</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input">
+									<span class="es-cb-name">联系地址</span>
+									<div id="city_2" class="es-city-choice" style="display: inline-block">
+										<select class="prov"></select>
+										<select class="city" disabled="disabled"></select>
+										<select class="dist" disabled="disabled"></select>
+									</div>
+								</div>
+								<div class="es-cb-input">
+									<span class="es-cb-name"></span>
+									<div style="display: inline-block">
+										<input type="text" name="cAddress" id="cAddress" value="" placeholder="请填写详细地址" class="es-cbinput" autocomplete="off"/>
+									</div>
+									<p class="es-error-msg"><em></em><span></span></p>
+								</div>
+								<p class="es-cb-info">请填写详细地址</p>
+							</div>
+							<div class="es-cb-item">
+								<div class="es-cb-input es-cb-input-btn">
+									<span class="es-cb-name">&nbsp;</span>
+									<input class="es-ipt-up" type="button" value="上一步"><input class="es-ipt-down" type="button" value="下一步">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery.cityselect.js"></script>
+		<script type="text/javascript">
+			/*2016-10-13 加减号 s*/
+			var wrap=$(".es-cb-inputNew");
+			var selNum=$(".es-cb-inputNew").find("div:first").find(".selCor option").length-1;//可添加个数
+			//加号
+			$(".addBtn").on("click",addCol);
+			function addCol(){
+				var selHadNum=$(".selCor").length;
+					if(selHadNum==selNum){
+						var boxNum=selNum;
+					}else{
+						var boxNum=0;
+					}
+				boxNum++
+				if(boxNum>=(selNum)){
+					boxNum--;
+					alert("当前您只能关联"+selNum+"家核心企业");
+					return false;
+				}else{
+					var newDiv=$(".es-cb-inputNew").find("div:first").clone(true);
+					newDiv.find("select").val("-1");
+					newDiv.find("p").removeClass("es-error es-right").find("span").html("");
+					newDiv.appendTo(wrap);
+				}
+			}
+			//减号
+			$(".delBtn").on("click",function(){
+				var selHadNum=$(".selCor").length;
+					if(selHadNum==selNum){
+						var boxNum=selNum;
+					}else{
+						var boxNum=0;
+					}
+				var delBox=$(this).parent().parent().remove();
+				//$(".addBtn").off("click").on("click",addCol);
+				boxNum--;
+			})
+			//选择
+			$(".selCor").on("change",function(){
+				var tVal=$(this).children("option:checked").index();
+				var num=0;
+				$.each($(".selCor option:checked"), function() {
+					if($(this).index()==tVal){
+						num+=1;
+					}
+				});
+				var iObj = $(this).siblings(".es-error-msg");
+				if(num>1){
+					errorInfoShow(iObj, "不能与其他项重复");
+					return false;
+					
+				}else{
+					errorInfoShow(iObj, "");
+				}
+				
+			})
+			/*2016-10-13 加减号 e*/
+		</script>
+		<script>
+			var iMv = new mValidate();
+
+			$(".es-cbinput").on("focus", function () {
+				$(this).addClass("active");
+				$(this).parent().siblings(".es-cb-info").addClass("active");
+			})
+			$(".es-cbinput").on("blur", function () {
+				$(this).removeClass("active");
+				$(this).parent().siblings(".es-cb-info").removeClass("active");
+			});
+			var selGyl=$(".selGyl"),selLx=$(".selLx"),cName =$("#cName"),socialCredit=$("#socialCredit"),busLic=$("#busLic"),orgIns=$("#orgIns"),Tax=$("#Tax"),bankPermit=$("#bankPermit"),corName=$("#corName"),corCard=$("#corCard"),accName=$("#accName"),accBank=$("#accBank"),accNum=$("#accNum"),busContacts=$("#busContacts"),cPhone=$("#cPhone"),cEmail=$("#cEmail"),cAddress=$("#cAddress");
+			
+			var validateForm_ =function(){//验证方法
+			}
+			validateForm_.prototype={
+				selCorLx:function(){//核心企业+所属类型
+					if( selGyl.val()=="-1" ||  selLx.val()=="-1"){
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择完整信息");
+						return false;
+					}else{
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				selGyl:function(){//供应链
+					if( selGyl.val()=="-1" ){
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择供应链");
+						return false;
+					}else{
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				selLx:function(){//所属类型
+					if( selLx.val()=="-1" ){
+						var iObj = selLx.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择所属类型");
+						return false;
+					}else{
+						var iObj = selLx.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cName:function(){//姓名
+					if (!iMv.isEmpty(cName.val())) {//验证空
+						var iObj = cName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入企业名称");
+						return false;
+					}else{
+						var iObj = cName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				socialCredit:function(){//营业执照
+					if (!iMv.isEmpty(socialCredit.val())) {//验证空
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入18位统一社会信用代码");
+						return false;
+					}
+					if (!iMv.vScredit(socialCredit.val())) {//验证格式 15位或18位数字
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "统一社会信用代码格式错误");
+						return false;
+					}else{
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				busLic:function(){//营业执照
+					if (!iMv.isEmpty(busLic.val())) {//验证空
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入营业执照编号");
+						return false;
+					}
+					if (!iMv.vLic(busLic.val())) {//验证格式 15位或18位数字
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "营业执照编号格式错误");
+						return false;
+					}else{
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				orgIns:function(){//组织机构代码
+					if (!iMv.isEmpty(orgIns.val())) {//验证空
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入组织机构代码");
+						return false;
+					}
+					if (!iMv.vOrcode(orgIns.val())) {//格式 数字+字母
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "组织机构代码格式错误");
+						return false;
+					}else{
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				Tax:function(){//税务登记号
+					if (!iMv.isEmpty(Tax.val())) {//验证空
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入营业执照编号");
+						return false;
+					}
+					if (!iMv.vLic(Tax.val())) {//验证格式 15位或18位数字
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "税务登记号格式错误");
+						return false;
+					}else{
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				bankPermit:function(){//开户银行许可证
+					if (!iMv.isEmpty(bankPermit.val())) {//验证空
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户银行许可证");
+						return false;
+					}
+					if (!iMv.vPermit(bankPermit.val())) {//
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "开户银行许可证格式错误");
+						return false;
+					}else{
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				corName:function(){//法人姓名
+					if (!iMv.isEmpty(corName.val())) {//验证空
+						var iObj = corName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入法人姓名");
+						return false;
+					}else{
+						var iObj = corName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				corCard:function(){//身份证
+					if (!iMv.isEmpty(corCard.val())) {//验证空
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入法人身份证号");
+						return false;
+					}
+					if (!_idcardno(corCard.val())) {//
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "身份证号码格式错误");
+						return false;
+					}else{
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accName:function(){//开户名
+					if (!iMv.isEmpty(accName.val())) {//验证空
+						var iObj = accName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户名");
+						return false;
+					}else{
+						var iObj = accName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accBank:function(){//开户行
+					if (!iMv.isEmpty(accBank.val())) {//验证空
+						var iObj = accBank.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户行");
+						return false;
+					}else{
+						var iObj = accBank.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accNum:function(){//开户账号
+					if (!iMv.isEmpty(accNum.val())) {//验证空
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户账号");
+						return false;
+					}else if (!iMv.vBnum(accNum.val())) {//验格式 20位数字
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入正确的开户账号");
+						return false;
+					}{
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				busContacts:function(){
+					if (!iMv.isEmpty(busContacts.val())) {//验证空
+						var iObj = busContacts.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入企业联系人姓名");
+						return false;
+					}else{
+						var iObj = busContacts.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cPhone:function(){
+					if (!iMv.isEmpty(cPhone.val())) {//验证空
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入联系人手机号");
+						return false;
+					}
+					if (!iMv.mobile(cPhone.val())) {//验证格式 15位或18位数字
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "联系人手机号格式错误");
+						return false;
+					}else{
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cEmail:function(){//邮箱
+					if (!iMv.isEmpty(cEmail.val())) {//验证空
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入邮箱地址");
+						return false;
+					}
+					if (!iMv.email(cEmail.val())) {//
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "邮箱地址格式错误");
+						return false;
+					}else{
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cAddress:function(){//联系地址
+					if (!iMv.isEmpty(cAddress.val())) {//验证空
+						var iObj = cAddress.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入联系地址");
+						return false;
+					}else{
+						var iObj = cAddress.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				}
+			};
+			//绑定验证信息
+			var iV = new validateForm_();
+			/*selGyl.on("blur input",function(){
+				if( $(this).val()=="-1" ||  $(this).siblings(".selLx").val()=="-1"){
+						var iObj = $(this).siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择完整信息");
+						return false;
+					}else{
+						var iObj = $(this).siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+			});*/
+			socialCredit.on("blur input",function(){
+				iV.socialCredit();
+			})
+			selLx.on("blur input",function(){
+				if( $(this).val()=="-1" ||  $(this).siblings(".selGyl").val()=="-1"){
+						var iObj = $(this).siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择完整信息");
+						return false;
+					}else{
+						var iObj = $(this).siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+			});
+			cName.on("blur input",function(){
+				iV.cName();
+			});
+			busLic.on("blur input",function(){
+				iV.busLic();
+			});
+			orgIns.on("blur input",function(){
+				iV.orgIns();
+			});
+			Tax.on("blur input",function(){
+				iV.Tax();
+			});
+			bankPermit.on("blur input",function(){
+				iV.bankPermit();
+			});
+			corName.on("blur input",function(){
+				iV.corName();
+			});
+			corCard.on("blur input",function(){
+				iV.corCard();
+			});
+			accName.on("blur input",function(){
+				iV.accName();
+			});
+			accBank.on("blur input",function(){
+				iV.accBank();
+			});
+			accNum.on("blur input",function(){
+				iV.accNum();
+			});
+			busContacts.on("blur input",function(){
+				iV.busContacts();
+			});
+			cPhone.on("blur input",function(){
+				iV.cPhone();
+			});
+			cEmail.on("blur input",function(){
+				iV.cEmail();
+			});
+			cAddress.on("blur input",function(){
+				iV.cAddress();
+			});
+			//下一步
+			$(".es-ipt-down").on("click",function(){
+				var iSelType = $(".es-sh-type .active").data("type");
+				var iSelTypeFlag = false;
+				iSelTypeFlag = iSelType==0?(iV.selCorLx()):true;
+				var iRadio = $(".s-cb-input-radio input");
+				if( iRadio.eq(0).prop("checked") ){//选择统一社会信用代码  验证通过 提交
+					if(  iSelTypeFlag&&iV.cName()&&iV.socialCredit()&&iV.bankPermit()&&iV.corName()&&iV.corCard()&&iV.accName()&&iV.accBank()&&iV.accNum()&&iV.busContacts()&&iV.cPhone()&&iV.cEmail()&&iV.cAddress() ){
+						alert("验证通过");
+					}
+				}else{
+					if( iSelTypeFlag&&iV.cName()&&iV.busLic()&&iV.orgIns()&&iV.Tax()&&iV.bankPermit()&&iV.corName()&&iV.corCard()&&iV.accName()&&iV.accBank()&&iV.accNum()&&iV.busContacts()&&iV.cPhone()&&iV.cEmail()&&iV.cAddress() ){
+						alert("验证通过");
+					}
+				}
+			})
+			//选择类型 三证分写 || 三证合一
+			$(".s-cb-input-radio input").on("click",function(){
+				var index_ =  $(this).data("type");
+				$(".es-cert-type").hide().eq(index_).show();
+			});
+			//选择注册类型
+			var oAs_ =  $(".es-sh-type a");
+			var oSelarea = $(".es-sel-area");
+			oAs_.each(function(i,o){
+				$(this).click(function(){
+					oAs_.removeClass("active").eq(i).addClass("active");
+					i==0?oSelarea.show():oSelarea.hide();
+				})
+			});
+			//选择地区
+			$("#city_2").citySelect({
+				prov:"北京",
+				nodata:"none"
+			});
+
+		</script>
+	</body>
+</html>

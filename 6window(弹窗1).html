@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc;height: 13000px;">
+	<div class="es-dialog-box" style="height: 393px;">
+		<h4><span class="diaClose close fr"></span>确认支付</h4>
+		<form action="" method="post" id="myform">
+			<ul class="list">
+				<li><label for="vroleName">支付金额：</label>
+					<span class="payNum"><em>1004.00 </em>元</span>
+				</li>
+				<li><label for="vloginUser">支付笔数：</label>
+					<span class="payNum2">323笔</span>
+				</li>
+				<li class="payli"><label for="payPwd">支付密码：</label>
+					<input id="payPwd" name="payPwd" type="password" placeholder="请输入支付密码" class="payInp">
+					<a href="javascript:;">忘记支付密码</a>
+					<p class="es-error-msg"><em></em><span></span></p>
+				</li>
+				<li><label>支付时间：</label>
+					<input type="radio" name="payWay" id="imWay" value="0" checked="checked"/>立即支付
+					<input type="radio" name="payWay" id="timeWay" value="1"/>定时支付
+					<div class="payTime">
+						选择时间 <input class="Wdate borSt paydate" type="text"  id="Paydate" onfocus="WdatePicker({
+							isShowClear:true,
+							readOnly:true,
+							position:{top:'under'},
+							onpicking:function(dp){
+								 
+								if(dp.cal.getNewDateStr()){
+									$(this).val(dp.cal.getNewDateStr())
+									 
+									}
+								}
+							})" readonly/>
+							
+					</div>
+				</li>
+				
+				<li><label for=""></label>
+					<span class="es-btn diaOk">提交</span>
+					<p class="es-error-msg"><em></em><span></span></p>
+				</li>
+			</ul>
+		</form>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//打开弹窗
+$(".es-dialog-box").addClass("active");
+//关闭弹窗
+$(".diaClose").on("click",function(){$(".es-dialog-box").removeClass("active");});
+//开始验证
+var iMv = new mValidate();
+var payPwd=$("#payPwd");
+var timeWay=$("#timeWay");
+var imWay=$("#imWay");
+var payway=$('input:radio[name="payWay"]');
+var Paydate=$("#Paydate");
+var iV={
+	payPwd:function(){//支付密码
+		var iObj = payPwd.siblings(".es-error-msg");
+		if(!iMv.isEmpty(payPwd.val())){
+			errorInfoShow(iObj, "请填写支付密码");
+			return false;
+		}else if(!iMv.vPwd(payPwd.val())){
+			errorInfoShow(iObj, "密码格式不正确");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	}
+};
+payPwd.on("blur input",iV.payPwd);
+payway.on("change",function(){
+	var val=$('input:radio[name="payWay"]:checked').val();
+	if(val=="1"){
+		$(".payTime").css("display","block");
+		<!--$("html,body").css({overflow:"hidden"});-->
+	}else{
+		$(".payTime").css("display","none");
+	<!--	$("html,body").css({overflow:"auto"}) ;-->
+	}
+});
+function hideDate(){
+	$(".payTime").css("display","none");
+}
+//提交表单
+$(".diaOk").on("click",function(){
+	var val=$('input:radio[name="payWay"]:checked').val();
+	if( (iV.payPwd() && val=="0") || (iV.payPwd() && val=="1" && $("#Paydate").val()!="")){
+		alert("验证通过")
+		$("#myform").submit();
+	}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <link href="css/adStyle.css" rel="stylesheet"/>
+	    <script src="My97DatePicker/WdatePicker.js"></script>
+		<link href="js/pagination/kkpager.css" rel="stylesheet">
+		<script src="js/pagination/kkpager.min.js"></script>
+	</head>
+	<body style="background-color:#f6f6f6; ">
+		<div id="esHeader" class="es-comWidth clearFiex" style="background-color:#fff; ">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>                                    
+		    <ul class="es-nav fl">
+		    	<li>首页</li>
+		    	<li>企业信息</li>
+		        <li class="active">角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info3 fr">
+		    	<div class="comName fl">
+		    		<h5>全部公司<em></em><span></span></h5>
+		    		<div class="compyList">
+		    			<ul>
+		    				<li><a href="javascript:;">北京恒善信诚科技有限公司1</a></li>
+		    				<li><a href="javascript:;">北京恒善信诚科技有限公司2</a></li>
+		    				<li><a href="javascript:;">北京恒善信诚科技有限公司3</a></li>
+		    				<li><a href="javascript:;">北京恒善信诚科技有限公司4</a></li>
+		    				<li><a href="javascript:;">北京恒善信诚科技有限公司5</a></li>
+		    			</ul>
+		    		</div>
+		    	</div>
+		    	<div class="line fl"></div>
+		    	<div class="nickName fl">
+		    		<p>欢迎您，</p>
+		    		<p class="toe">全部公司</p>
+		    	</div>
+	    		<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth whitebg">
+			<div class="es-c-binfo createSubbox">
+				<form action="" method="post" onsubmit="return validate();">
+					<div class="es-cb-item">
+						<div class="es-cb-input">
+							<span class="es-cb-name">管理员账号</span>
+							<input type="text" name="admAcc" id="admAcc" value="" placeholder="5-25位字符，由字母、数字、或符号" class="es-cbinput" autocomplete="off"/>
+							<p class="es-error-msg"><em></em><span></span></p>
+						</div>
+					</div>
+					<div class="es-cb-item">
+						<div class="es-cb-input">
+							<span class="es-cb-name">登录密码</span>
+							<input type="password" name="lgPwd" id="lgPwd" value=""  class="es-cbinput" placeholder="6-18位字符，包括英文字母、数字或符号" autocomplete="off"/>
+							<p class="es-error-msg"><em></em><span></span></p>
+						</div>
+					</div>
+					<div class="es-cb-item">
+						<div class="es-cb-input">
+							<span class="es-cb-name">手机号</span>
+							<input type="text" name="phone" id="phone" value="" placeholder="请输入手机号" class="es-cbinput" autocomplete="off"/>
+							<p class="es-error-msg"><em></em><span></span></p>
+						</div>
+					</div>
+					<div class="es-cb-item">
+						<div class="es-cb-input">
+							<span class="es-cb-name">短信验证码</span>
+							<input type="text" name="SMCode" id="SMCode" value="" placeholder="请输入验证码" class="es-cbinput es-phone-code" autocomplete="off"/>
+							<span class="es-btn es-btn-code SMS-btn" data-type="1" onclick="getCode(1)" data-html="短信验证码">短信验证码</span>&nbsp;&nbsp;或&nbsp;&nbsp;<span class="es-btn es-btn-code SMS-btn" data-type="0" onclick="getCode(2)" data-html="语音验证码">语音验证码</span>
+							<p class="es-error-msg right" ><em></em><span id='errorSpan'></span></p>
+						</div>
+					</div>
+					<div class="es-cb-item">
+						<div class="es-cb-input">
+							<span class="es-cb-name">&nbsp;</span>
+							<input type="submit" style="width: 377px;" class="es-btn es-iptdown-gray es-ipt-down" value="提交"/>
+							<!-- <input class="es-ipt-up" type="button" value="上一步"><input class="es-ipt-down" type="button" value="下一步"> -->
+						</div>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #f6f6f6;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+		<script type="text/javascript">
+		// 倒计时
+		var SMSBtn=$(".SMS-btn"),SMInter="";
+		SMSBtn.on("click",SMFun);
+		function SMFun(){
+		    var i=59,that=$(this),_type=that.attr("data-type");//_type是发送验证码类型 1是短信 0是语音
+		    // 验证输入信息
+		    if(admaccFun()&&lgpwdFun()&&phoneFun()){
+		        // 开始改状态
+		        SMSBtn.addClass("es-gray").off("click");
+		        that.html(i+"秒后重新获取");
+		        clearInterval(SMInter);
+		    /*    $.ajax({
+		            type: "post",
+		            dataType: "json",
+		            url:"https://www.songshubank.com/",
+		            data:{type:"0",mobile:"12345678901",iCode:"abcedf"},
+		            success:function(result){
+		                if(result.errorCode==1){//成功*/
+		                    // 开始倒计时
+		                    SMInter=setInterval(function(){
+		                        if(i<=1){
+		                            // 还原状态
+		                            clearInterval(SMInter);
+		                            that.html(that.attr("data-html"));
+		                            SMSBtn.removeClass("es-gray").on("click",SMFun);
+		                        }else{
+		                            i--;
+		                            that.html(i+"秒后重新获取");
+		                        }
+		                    },1034);
+		    /*            }else{}
+		            },
+		            error:function(XMLHttpRequest, textStatus, errorThrown){}
+		        });*/
+		    }
+		}
+			// 全局变量
+			var iMv = new mValidate();
+			var admAcc =$("#admAcc"),lgPwd =$("#lgPwd"),phone =$("#phone"),SMCode = $("#SMCode");
+
+			//样式---边框变颜色
+			$(".es-cbinput").on("focus", function () {
+				$(this).addClass("active");
+				$(this).parent().siblings(".es-cb-info").addClass("active");
+			});
+			$(".es-cbinput").on("blur", function () {
+				$(this).removeClass("active");
+				$(this).parent().siblings(".es-cb-info").removeClass("active");
+			});
+			
+			$(".es-cbinput").on("input change propertychange",onValidateFun);
+			function onValidateFun(){
+				$(".es-cbinput").off("propertychange");
+				validateFun()
+				$(".es-cbinput").on("propertychange",onValidateFun);
+			}
+			function validateFun(){
+				var t=false;
+				if(!iMv.vAccNum(admAcc.val())){
+					t=false;
+				}
+				else if(!iMv.vPwd(lgPwd.val())){
+					t=false;
+				}else if(!iMv.mobile(phone.val())){
+					t=false;
+				}else if(!iMv.isSMCode(SMCode.val())){
+					t=false;
+				}else{
+					t=true;
+				}
+				if(t){$(".es-ipt-down").removeClass("es-iptdown-gray");}else{$(".es-ipt-down").addClass("es-iptdown-gray");}
+			}
+			function validate(){
+				var t=false;
+				if( admaccFun()&&lgpwdFun()&&phoneFun() && SMCodeFun() ){
+					t=true;
+				}else{
+					t=false;
+				}
+				return t;
+			}
+			//手机与短信验证
+			SMCode.on("focus",function(){
+				$("#errorSpan").html("");
+			});
+			admAcc.on("blur input",admaccFun);
+			lgPwd.on("blur input",lgpwdFun);
+			phone.on("blur input",phoneFun);
+			SMCode.on("blur input",SMCodeFun);
+			/*管理员账号验证*/
+			function admaccFun(){
+				var iObj = admAcc.siblings(".es-error-msg");
+				if (!iMv.isEmpty(admAcc.val())) {//验证空
+					errorInfoShow(iObj, "请输入管理员账号");
+					return false;
+				}
+				if (!iMv.vAccNum(admAcc.val())) {//验证格式
+				    errorInfoShow(iObj, "管理员账号格式错误");
+				    return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+			/*登录密码验证*/
+			function lgpwdFun(){
+				var iObj = lgPwd.siblings(".es-error-msg");
+				if (!iMv.isEmpty(lgPwd.val())) {//验证空
+					errorInfoShow(iObj, "请输入登录密码");
+					return false;
+				}
+				if (!iMv.vPwd(lgPwd.val())) {//验证格式
+				    errorInfoShow(iObj, "登录密码格式错误");
+				    return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+			/*手机号验证*/
+			function phoneFun(){
+				var iObj = phone.siblings(".es-error-msg");
+				if (!iMv.isEmpty(phone.val())) {//验证空
+					errorInfoShow(iObj, "请输入手机号");
+					return false;
+				}
+				if (!iMv.mobile(phone.val())) {//验证格式
+				    errorInfoShow(iObj, "手机号格式错误");
+				    return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+			/*验证码验证*/
+			function SMCodeFun(){
+				var iObj = SMCode.siblings(".es-error-msg");
+				if (!iMv.isEmpty(SMCode.val())) {//验证空
+					errorInfoShow(iObj, "请输入验证码");
+					return false;
+				}
+				if (!iMv.isSMCode(SMCode.val())) {//验证格式
+					errorInfoShow(iObj, "短信验证码错误");
+					return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+			//错误提示信息
+			function errorInfoShow(obj, msg) {
+				obj.show();
+				if (msg != "") {
+					obj.removeClass("es-right").addClass("es-error");
+					obj.find("span").html(msg);
+				} else {
+					obj.removeClass("es-error").addClass("es-right");
+					obj.find("span").html(msg);
+				}
+			}
+			
+			function getCode(type) {
+				$(".right").removeClass("es-error");
+				$("#errorSpan").html("");
+			    var url = "/register/code/phone?t=" + (new Date()).valueOf();
+			    var admAcc =$("#admAcc").val(),lgPwd =$("#lgPwd").val(),phone = $("#phone").val();
+			    var data = {admAcc:admAcc,loginNum:lgPwd,phoneNum:phone,type:type};
+				$.ajax({
+				     type: 'POST',
+				     url: url ,
+				    data: data
+				});
+		 	}
+
+		</script>
+	</body>
+</html>

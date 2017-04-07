@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+    <style type="text/css">
+    	.pay-dialog-box h4{
+    		background: #FF6600;color: #fff;
+    		margin-bottom: 14px;
+    	}
+    	.pay-dialog-box .delBtn{
+    		font-size: 30px;
+		    padding: 0 14px;
+		    cursor: pointer;
+    	}
+    	.pay-dialog-box p.pay-word{
+    		line-height: 40px;
+		    padding-left: 28px;
+		    font-size: 16px;
+    	}
+    	.pay-dialog-box p.pay-word .inp{
+    		border: 1px solid #e8e8e8;
+		    padding: 5px;
+		    border-radius: 4px;
+    	}
+    	.pay-dialog-box .pay-f-Pwd{
+    		font-size: 12px;
+		    color: #0099cf;
+		    margin-left: 10px;
+    	}
+    	.pay-dialog-box .pay-confbtn{
+    		    width: 165px;
+			    height: 36px;
+			    border-radius: 4px;
+			    outline: none;
+			    border: none;
+			    color: #f6f6f6;
+			    background: #FF6600;
+			    text-align: center;
+			    font-size: 14px;
+			    line-height: 36px;
+			    cursor: pointer;
+			    display: inline-block;
+			    margin-top: 10px;
+			    margin-left: 107px;
+			    vertical-align: middle;
+    	}
+    	.pay-dialog-box .pay-tip{
+    		margin-left: 107px;
+  			color: #e43737;
+    	}
+    </style>
+</head>
+<body style="background:#ccc">
+	<div class="meda"></div>
+	<div class="del-dialog-box pay-dialog-box">
+		<form action="" method="post" id="form">
+			<h4 style=""><span class="delBtn fr" id="p-delBtn">x</span>请输入支付密码</h4>
+			<p class="pay-word">支付金额：<span>100.12</span>元</p>
+			<p class="pay-word">支付密码：<input type="password" id="payPwd" class="inp"/><a href="javascript:;" class="pay-f-Pwd">忘记支付密码？</a></p>
+			<p class="pay-tip"></p>
+			<p><a href="javascript:;" class="pay-confbtn" id="pay-confbtn">确认转账</a></p>
+		</form>
+		
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+
+openFun();
+$("#p-delBtn").on("click",closeFun);
+//打开弹窗
+function openFun(){
+	$(".meda").show();
+	$(".pay-dialog-box").show();
+}
+//关闭弹窗
+function closeFun(){
+	$(".meda").hide();
+	$(".pay-dialog-box").hide();
+}
+
+
+var iV=new mValidate();
+$("#pay-confbtn").on("click",function(){
+	if($("#payPwd").val()==""){
+		$(".pay-tip").html("请输入支付密码").slideDown();
+		return false;
+	}else if(!iV.is6Num($("#payPwd").val())){
+		$(".pay-tip").html("密码格式不正确").slideDown();
+		return false;
+	}else{
+		$("#form").submit();
+	}
+})
+
+$("#payPwd").on("focus",function(){
+	$(".pay-tip").slideUp();
+})
+</script>
+</body>
+</html>

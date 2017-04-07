@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>验证手机号</title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 个人信息登记</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item active">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo">
+						<form action="" method="post">
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">手机号</span>
+								<input type="text" name="phone" id="phone" value="" placeholder="请输入手机号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">短信验证码</span>
+								<input type="text" name="SMCode" id="SMCode" value="" placeholder="请输入验证码" class="es-cbinput es-phone-code" autocomplete="off"/>
+								<span class="es-btn es-btn-code SMS-btn" data-type="1" data-html="短信验证码">短信验证码</span><span class="es-btn es-btn-code SMS-btn" data-type="0" data-html="语音验证码">语音验证码</span>
+								<p class="es-error-msg right"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<span class="es-btn">提交</span>
+								<!-- <input class="es-ipt-up" type="button" value="上一步"><input class="es-ipt-down" type="button" value="下一步"> -->
+							</div>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script>
+// 倒计时
+var SMSBtn=$(".SMS-btn"),SMInter="";
+SMSBtn.on("click",SMFun);
+function SMFun(){
+    var i=59,that=$(this),_type=that.attr("data-type");//_type是发送验证码类型 1是短信 0是语音
+    // 验证手机号
+    if(phoneFun()){
+        // 开始改状态
+        SMSBtn.addClass("es-gray").off("click");
+        that.html(i+"秒后重新获取");
+        clearInterval(SMInter);
+    /*    $.ajax({
+            type: "post",
+            dataType: "json",
+            url:"https://www.songshubank.com/",
+            data:{type:"0",mobile:"12345678901",iCode:"abcedf"},
+            success:function(result){
+                if(result.errorCode==1){//成功*/
+                    // 开始倒计时
+                    SMInter=setInterval(function(){
+                        if(i<=1){
+                            // 还原状态
+                            clearInterval(SMInter);
+                            that.html(that.attr("data-html"));
+                            SMSBtn.removeClass("es-gray").on("click",SMFun);
+                        }else{
+                            i--;
+                            that.html(i+"秒后重新获取");
+                        }
+                    },1034);
+    /*            }else{}
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){}
+        });*/
+    }
+}
+				// 全局变量
+			var iMv = new mValidate();
+			var phone =$("#phone"),SMCode = $("#SMCode");
+
+				//样式---边框变颜色
+			$(".es-cbinput").on("focus", function () {
+				$(this).addClass("active");
+				$(this).parent().siblings(".es-cb-info").addClass("active");
+			});
+			$(".es-cbinput").on("blur", function () {
+				$(this).removeClass("active");
+				$(this).parent().siblings(".es-cb-info").removeClass("active");
+			});
+
+				//提交数据
+			$(".es-ipt-down").on("click",function(){
+				if( phoneFun() && SMCodeFun() ){
+					alert("验证通过");
+				}
+			});
+
+				//手机与短信验证
+			phone.on("blur",phoneFun);
+			SMCode.on("blur",SMCodeFun);
+			function phoneFun(){
+				var iObj = phone.siblings(".es-error-msg");
+				if (!iMv.isEmpty(phone.val())) {//验证空
+					errorInfoShow(iObj, "请输入手机号");
+					return false;
+				}
+				if (!iMv.mobile(phone.val())) {//验证格式
+				    errorInfoShow(iObj, "手机号格式错误");
+				    return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+			function SMCodeFun(){
+				var iObj = SMCode.siblings(".es-error-msg");
+				if (!iMv.isEmpty(SMCode.val())) {//验证空
+					errorInfoShow(iObj, "请输入验证码");
+					return false;
+				}
+				if (!iMv.isSMCode(SMCode.val())) {//验证格式
+					errorInfoShow(iObj, "短信验证码错误");
+					return false;
+				}else{
+					errorInfoShow(iObj, "");
+					return true;
+				}
+			}
+				//错误提示信息
+			function errorInfoShow(obj, msg) {
+				obj.show();
+				if (msg != "") {
+					obj.removeClass("es-right").addClass("es-error");
+					obj.find("span").html(msg);
+				} else {
+					obj.removeClass("es-error").addClass("es-right");
+					obj.find("span").html(msg);
+				}
+			}
+
+		</script>
+	</body>
+</html>

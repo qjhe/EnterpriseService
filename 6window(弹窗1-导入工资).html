@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc">
+	<div class="meda"></div>
+	<div class="es-dialog-box" style="height: 319px;margin-top: -160px;display: block;">
+		<h4><span class="diaClose close fr"></span>导入工资数据</h4>
+		<form action="" method="post" id="myform">
+			<ul class="impor-list">
+				<li>选择导入的文件</li>
+				<li>
+					<input type="text" name="" id="" value="" class="inp"/>
+					<span class="ipfi">浏览文件<input type="file" name="" id="" value="" class="inFile"/></span>
+				</li>
+				<li class="marT40">
+					<span id="" class="es-btn diaOk">确定</span>
+					<span id=""  class="es-btn none1 diacanc">取消</span>
+				</li>
+			</ul>
+		</form>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//关闭弹窗
+$(".diaClose").on("click",function(){
+	$(".es-dialog-box").hide();}
+);
+$(".diacanc").on("click",function(){
+	$(".es-dialog-box").hide();}
+);
+</script>
+</body>
+</html>

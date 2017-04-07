@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>
+		    <div class="es-login-info es-login-info2 fr">
+				<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+				<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<ul class="es-login-btn clearfix">
+					<li class="esl-blue"><a href="#">
+						<img src="images/esiPic1.png"/>
+						企业信息管理
+					</a></li>
+					<li class="esl-red"><a href="#">
+						<img src="images/esiPic2.png"/>
+						资金托管账户
+					</a></li>
+					<li class="esl-green1"><a href="#">
+						<img src="images/esiPic5.png"/>
+						资金管理
+					</a></li>
+					<li class="esl-green"><a href="#">
+						<img src="images/esiPic3.png"/>
+						角色管理
+					</a></li>
+					<li class="esl-yell"><a href="#">
+						<img src="images/esiPic4.png"/>
+						修改密码
+					</a></li>
+					<li class="esl-pur"><a href="#">
+						<img src="images/esiPic6.png" style="visibility: hidden;"/>
+						我要理财
+					</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/esValidate.js"></script>
+		<script>
+			//错误提示信息
+		    function errorInfoShow(obj, msg) {
+		        obj.show();
+		        if (msg != "") {
+		            obj.removeClass("es-right").addClass("es-error");
+		            obj.find("span").html(msg);
+		        } else {
+		            obj.removeClass("es-error").addClass("es-right");
+		            obj.find("span").html(msg);
+		        }
+		    }
+			function validateForm() {
+				if ($("#es-file-z").val() == "") {
+		            var iObj = $("#es-file-z").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证正面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-z").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-f").val() == "") {
+		            var iObj = $("#es-file-f").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证反面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-f").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-s").val() == "") {
+		            var iObj = $("#es-file-s").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传手持身份证照片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-s").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        return true;
+			}
+			$(".es-upBtn2").on("click",function(){
+				if(validateForm()){
+					$("#cb-form").submit();
+				};
+			})
+			
+		</script>
+	</body>
+</html>

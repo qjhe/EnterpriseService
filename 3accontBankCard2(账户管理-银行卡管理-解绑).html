@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc">
+
+	<div class="meda"></div>
+	<div class="repay-pop-wrap" style="display: block;">
+		<div class="repay-pop">
+			<div class="repay-pop-tit">
+				<span><strong class="or-color">解绑银行卡</strong>
+				<em class="p-pop-close"></em>
+			</div>
+			<div class="repay-pop-content">
+				<div class="pop-content-w unbdWrap">
+					<form action="" method="post" id="form">
+						<ul class="pay-info-list">
+							<li>您是否确认解绑此银行卡(尾号0008)？</li>
+							<li>支付密码<input type="password" id="payPwd" class="unbdInp" autocomplete="off" max="6" maxlength="6"/></li>
+						</ul>
+						<p class="forget-pwd-q"><span class="pay-tip err"></span><a href="javascript:void(0);" class="p-pop-close fr">忘记密码？</a></p>
+					
+						<p class="del-btn">
+							<span id="ubdcorfBtn"  class="es-btn diaOk">确认</span>
+							<span id="" class="es-btn none1 diacanc" style="margin-left: 10px;">取消</span>
+						</p>
+					</form>
+				</div>
+				<div class="sucWrap">
+					<dl class="suc-dl">
+						<dt><img src="images/sucPic.png"/></dt>
+						<dd>解绑成功，<em class="num">3</em>S后关闭弹框</dd>
+					</dl>
+					<p class="del-btn">
+						<span id="nowClose" class="es-btn diaOk">立即关闭</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//关闭弹窗
+$(".diaClose").on("click",function(){
+	$(".del-dialog-box").hide();}
+);
+$(".diacanc,.p-pop-close,#sucWrap").on("click",closeDig);
+
+function closeDig(){
+	$(".meda").hide();
+	$(".repay-pop-wrap").hide();
+}
+
+var iV=new mValidate();
+$("#ubdcorfBtn").on("click",function(){
+	if($("#payPwd").val()==""){
+		$(".pay-tip").html("请输入支付密码").slideDown();
+		return false;
+	}else if(!iV.is6Num($("#payPwd").val())){
+		$(".pay-tip").html("密码格式不正确").slideDown();
+		return false;
+	}else{
+		alert("验证通过")
+		$(".unbdWrap").hide();
+		$(".sucWrap").show();
+		showTime();  
+		
+	}
+})
+
+$("#payPwd").on("focus",function(){
+	$(".pay-tip").slideUp();
+})
+//设定倒数秒数  
+var t = 3;  
+//显示倒数秒数  
+function showTime(){  
+    t -= 1;  
+   $(".num").html(t);  
+    if(t==0){  
+        $(".meda").hide();
+		$(".repay-pop-wrap").hide();
+    }  
+    //每秒执行一次,showTime()  
+    setTimeout("showTime()",1000);  
+}  
+  
+  
+//执行showTime()  
+
+</script>
+</body>
+</html>

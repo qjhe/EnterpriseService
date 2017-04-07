@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <link href="css/adStyle.css" rel="stylesheet"/>
+	    <script src="My97DatePicker/WdatePicker.js"></script>
+		<link href="js/pagination/kkpager.css" rel="stylesheet">
+		<script src="js/pagination/kkpager.min.js"></script>
+	</head>
+	<body style="background-color:#f6f6f6; ">
+		<div id="esHeader" class="es-comWidth clearFiex" style="background-color:#fff; ">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>                                    
+		    <ul class="es-nav fl">
+		    	<li>首页</li>
+		    	<li>企业信息</li>
+		        <li class="active">角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+	    		<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+	    		<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex whitebg">
+			<div class="es-acc-nav es-acc-center fl">
+				<ul class="es-acc-box">
+					<li>
+						<a class="active" href="#">支付管理</a>
+					</li>
+					<li>
+						<a href="#">大额报销</a>
+					</li>
+					<li>
+						<a href="#">自助报销</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-con-center">
+				<!--查询-->
+				<div class="ad-top">
+					<ul class="clearfix">
+						<li class="fl"><a href="javascript:;" class="ad-orbtn">费用申请</a></li>
+						<li class="fl">
+		        			<span class="ad-tit">时间范围：</span>
+		        			<input class="Wdate borSt" type="text" id="d15" onfocus="WdatePicker({isShowClear:true,readOnly:true})" readonly>
+	        				-
+	        				<input class="Wdate borSt" type="text" id="d15" onfocus="WdatePicker({isShowClear:true,readOnly:true})" readonly>
+						</li>
+	        			<li class="fl">
+	        				<span class="ad-tit ad-marl20">关键字：</span>
+	        				<input type="text" name="" id="" value="" class="ad-inp"/>
+	        				<a href="javascript:;" class="ad-orbtn bluBtn">搜索</a>
+	        			</li>
+					</ul>
+					
+				</div>
+				<!--表格-->
+				<div class="ad-tablebox">
+					<!--adfail 审核失败  adpay 支付中 adpaysuc 支付成功 adpayfai 支付失败-->
+					<table class="ad-table">
+			    		<thead>
+			    			<th>时间</th>
+	                    	<th>名称</th>
+	                    	<th>金额（元）</th>
+	                    	<th>状态</th>
+	                    	<th style="width: 120px;">操作</th>
+							<th>操作2</th>
+			    		</thead>
+			    		<tbody>
+			    			<tr>                                                                                                                   
+				    			<td>2017.02.19 09:30</td>
+				    			<td>装修款</td>
+				    			<td>157,855,786.00</td>
+				    			<td>财务部审核中</td>
+				    			<td><a class="ad-detaibtn" href="javascript:;">查看详情</a></td>
+								<td>
+									<input id="1" type="checkbox" disabled>
+									<label for="1"></label>
+								</td>
+				    		</tr>
+				    		<tr>                                                                                                                   
+				    			<td>2017.02.19 09:30</td>
+				    			<td>装修款</td>
+				    			<td>157,855,786.00</td>
+				    			<td class="adfail">财务部审核失败</td>
+				    			<td><a class="ad-detaibtn ad-modyBtn" href="javascript:;">修改</a></td>
+								<td>
+									<input id="2" type="checkbox">
+									<label for="2"></label>
+								</td>
+				    		</tr>
+				    		<tr>                                                                                                                   
+				    			<td>2017.02.19 09:30</td>
+				    			<td>装修款</td>
+				    			<td>157,855,786.00</td>
+				    			<td class="adpay">支付中</td>
+				    			<td><a class="ad-detaibtn" href="javascript:;">查看详情</a></td>
+								<td>
+									<input id="3" type="checkbox" checked disabled>
+									<label for="3"></label>
+								</td>
+				    		</tr>
+				    		<tr>                                                                                                                   
+				    			<td>2017.02.19 09:30</td>
+				    			<td>装修款</td>
+				    			<td>157,855,786.00</td>
+				    			<td class="adpaysuc">支付成功</td>
+				    			<td><a class="ad-detaibtn" href="javascript:;">查看详情</a></td>
+								<td>
+									<input id="4" type="checkbox">
+									<label for="4"></label>
+								</td>
+				    		</tr>
+				    		<tr>                                                                                                                   
+				    			<td>2017.02.19 09:30</td>
+				    			<td>装修款</td>
+				    			<td>157,855,786.00</td>
+				    			<td class="adpayfai">支付失败</td>
+				    			<td><a class="ad-detaibtn ad-modyBtn" href="javascript:;">修改</a></td>
+								<td>
+									<input id="5" type="checkbox">
+									<label for="5"></label>
+								</td>
+				    		</tr>
+				    	</tbody>
+				   </table>
+				</div>
+				
+				<div class="page-nav-box" id="kkpager">
+
+		    	</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #f6f6f6;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+		<script type="text/javascript">
+			showHideMsg();
+			//鼠标滑过显示隐藏信息
+			function showHideMsg(){
+				$(".user-counts li span").each(function(i, e) {
+					$(this).hover(function(){
+						$(this).parent().parent().addClass("current");
+					},function(){
+						$(this).parent().parent().removeClass("current");
+					})
+				});
+				
+				$(".u-a-t .ac-ico").hover(function(){
+					$(this).parent().parent().addClass("current");
+				},function(){
+					$(this).parent().parent().removeClass("current");	
+				})	
+			}
+			//设置导航栏高度
+			setNavHeight();
+			//分页
+			definedPaginator(2, 50, "kkpager");
+			//definedPaginator(pageNo, totalPages, "kkpager",initInvestorList)
+			$("#1").on("change",function(){
+				alert(0)
+			})
+		</script>
+	</body>
+</html>

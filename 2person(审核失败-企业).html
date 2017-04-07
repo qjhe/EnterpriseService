@@ -1,0 +1,949 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个体户信息管理-基本信息</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/ecJs.js"></script>
+	<script src="js/esValidate.js"></script>
+</head>
+<body>
+
+<div id="esHeader" class="es-comWidth clearFiex">
+    <div class="es-logo-area clearFiex fl">
+        <a class="es-logo-a fl" href="javascript:;"></a>
+
+        <h2 class="fl">恒善普惠 · 企业服务</h2>
+    </div>
+    <ul class="es-nav fl">
+        <li>首页</li>
+    	<li class="active">企业信息</li>
+        <li>角色管理</li>
+        <li>流程管理</li>
+        <li>账户设置</li>
+    </ul>
+    <div class="es-login-info es-login-info2 fr">
+		<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+		<a href="javascript:;">退出</a>
+    </div>
+</div>
+<div class="es-bread-line es-comWidth">
+    <p><a href="javascript:;">企业管理</a>&nbsp;&gt;&nbsp;<a href="javascript:;">企业详情</a></p>
+</div>
+<div class="es-fail-tip">
+	<p><em></em>审核失败   <span>您上传的法人身份信息与法人姓名不一致，请重新上传！</span></p>
+</div>
+<div class="es-speed es-comWidth">
+    <div class="es-speed-box ac-unselect">
+        <p class="es-speed-item esi-a active"><span>1</span><em>填写信息</em></p>
+
+        <p class="es-speed-item esi-b active"><span>2</span><em>审核中</em></p>
+
+        <p class="es-speed-item esi-c active2"><span></span><em>审核失败</em></p>
+    </div>
+</div>
+<div class="es-comWidth">
+    <div class="es-info-box">                              
+        <ul class="es-tab-tit clearFiex ac-unselect">
+            <li class="active">企业基本信息</li>
+            <li>企业资质信息</li>
+            <li>企业员工信息</li>
+        </ul>
+        <div class="es-tab-conwrap">
+            <!-- 企业基本信息 -->
+            <div class="es-tab-con es-table-biwrap es-table-biwrap1" style="display: block;">
+                <table class="es-table-basicinfo">
+                    <tr>
+                        <td width="216">供应链</td>
+                        <td> 
+                            <select class="es-select-bi" disabled="disabled" id="selGyl">
+                            	<option value="-1">请选择所需的供应链</option>
+                                <option value="1">aaaa</option>
+                                <option value="2">bbbb</option>
+                                <option value="3">cccc</option>
+                            </select>
+                            <p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn es-tblues">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-selGyl">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>所属类型</td>
+                        <td>
+                            <select class="es-select-bi"  disabled="disabled" id="selLx">
+                                <option value="-1">请选择所属类型</option>
+                                <option value="1">aaaa</option>
+                                <option value="2">bbbb</option>
+                                <option value="3">cccc</option>
+                            </select>
+                            <p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn es-tblues">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-selLx">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>企业名称</td>
+                        <td>
+                        	<span class="es-show-word">北京恒善信诚科技有限公司</span>
+                        	<input type="text" name="cName" id="cName" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-cName">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>营业执照编号</td>
+                        <td>
+                        	<span class="es-show-word">1234567890033456789</span>
+                        	<input type="text" name="busLic" id="busLic" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-busLic">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>组织机构代码</td>
+                        <td>
+                        	<span class="es-show-word">保障账户安全，只有通过实名认证，才能充值投资、申请借款。</span>
+                        	<input type="text" name="orgIns" id="orgIns" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-orgIns">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>税务登记号</td>
+                        <td>
+                        	<span class="es-show-word">该银行卡可用于网站及手机APP的充值与提现</span>
+                        	<input type="text" name="Tax" id="Tax" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-Tax">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开户银行许可证</td>
+                       	<td>
+                        	<span class="es-show-word">邮件接收账户通知，及时了解账户信息变动情况。</span>
+                        	<input type="text" name="bankPermit" id="bankPermit" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-bankPermit">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>法人姓名</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="corName" id="corName" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-corName">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>法人身份证号</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="corCard" id="corCard" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-corCard">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开户名</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="accName" id="accName" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-accName">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开户行</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="accBank" id="accBank" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-accBank">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开户账号</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码</span>
+                        	<input type="text" name="accNum" id="accNum" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-accNum">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>企业联系人</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="busContacts" id="busContacts" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-busContacts">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联系人手机号</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="cPhone" id="cPhone" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-cPhone">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联系人邮箱</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="cEmail" id="cEmail" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save" id="btn-cEmail">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>企业联系地址</td>
+                        <td>
+                        	<span class="es-show-word">实名认证后，在业务授权、提现环节中将会使用到支付密码。</span>
+                        	<input type="text" name="cAddress" id="cAddress" value="" class="es-t-text"/>
+                        	<input type="hidden" name="" id="" value="" class="es-t-text1"/>
+                        	<p class="es-error-msg es-error-msg1"><em></em><span></span></p>
+                        </td>
+                        <td width="216">
+                        	<a href="javascript:;" class="es-tblue es-modBtn">修改</a>
+                        	<p class="es-mody">
+                        		<a href="javascript:;" class="es-save">保存</a>
+                        		<a href="javascript:;" class="es-cancle">取消</a>
+                        	</p>
+                        </td>
+                    </tr>
+                </table>
+                <div class="es-btnbox">
+                	<a class="es-upBtn"/>保存</a>
+                	<a class="es-upBtn2 active"/>下一步</a>
+                </div>
+            </div>
+            <!-- 个人资质信息 -->
+            <div class="es-tab-con es-qua-box">
+                <ul class="es-qua-wrap">
+                    <li>
+                        <!-- 没有修改权限加class es-qua-item-nomodi -->
+                        <div class="es-qua-item es-qua-item-nomodi">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+
+                            <div class="es-qua-updateimg">
+                                <h3>重新上传</h3>
+
+                                <p class="es-qu-img clearFiex"><span class="fl">./images/content/qua.jpg</span><a
+                                        class="fr ca-gradient" href="javascript:;"><input type="file">添加文件</a></p>
+
+                                <p class="es-qu-img-txt">您可以上传JPG、GIF或PNG文件<br>上传图片最大500K</p>
+
+                                <p class="es-qu-img-btn">
+                                    <a class="esqu-save b-color" href="javascript:;">保存</a>
+                                    <a class="esqu-cancel" href="javascript:;">取消</a>
+                                </p>
+                            </div>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="es-qua-item">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+
+                            <div class="es-qua-updateimg">
+                                <h3>重新上传</h3>
+
+                                <p class="es-qu-img clearFiex"><span class="fl">./images/content/qua.jpg</span><a
+                                        class="fr ca-gradient" href="javascript:;"><input type="file">添加文件</a></p>
+
+                                <p class="es-qu-img-txt">您可以上传JPG、GIF或PNG文件<br>上传图片最大500K</p>
+
+                                <p class="es-qu-img-btn">
+                                    <a class="esqu-save b-color" href="javascript:;">保存</a>
+                                    <a class="esqu-cancel" href="javascript:;">取消</a>
+                                </p>
+                            </div>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="es-qua-item">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="es-qua-item">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="es-qua-item es-qua-item-nomodi">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="es-qua-item">
+                            <a class="es-qua-update-btn" href="javascript:;"><em></em>修改</a>
+                            <img src="./images/content/qua.jpg">
+
+                            <div class="es-img-info">
+                                <h3>法定代表人身份证背面</h3>
+
+                                <p><span>图片格式：支持jpg/gif/png</span><em>图片需小于500K</em></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="es-btnbox">
+                	<a class="es-upBtn"/>保存</a>
+                	<a class="es-upBtn2 active"/>提交申请</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="es-tfooter">
+    <p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+</div>
+</body>
+<script>
+    fnTab($(".es-tab-tit"), $(".es-tab-conwrap"), "click");
+    interColor("es-table-basicinfo", "#f6f6f6", "#fff");
+    $(".es-qua-update-btn").click(function () {
+        $(this).siblings(".es-qua-updateimg").show();
+    });
+    $(".es-qua-updateimg .esqu-cancel").click(function(){
+        $(this).parent().parent().hide();
+    })
+    
+    $(".es-tblue").on("click",function(){
+    	modyFun($(this))
+    })
+    
+  /*  $(".es-save").on("click",function(){
+    	saveFun($(this))
+    })*/
+    
+    $(".es-cancle").on("click",function(){
+    	acncleFun($(this))
+    })
+    
+      /*保存 s*/
+    $("#btn-selGyl").on("click",function(){
+    	if(iV.selGyl()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-selLx").on("click",function(){
+    	if(iV.selLx()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-cName").on("click",function(){
+    	if(iV.cName()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-busLic").on("click",function(){
+    	if(iV.busLic()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-orgIns").on("click",function(){
+    	if(iV.orgIns()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-Tax").on("click",function(){
+    	if(iV.Tax()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-bankPermit").on("click",function(){
+    	if(iV.bankPermit()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-corName").on("click",function(){
+    	if(iV.corName()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-corCard").on("click",function(){
+    	if(iV.corCard()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-accName").on("click",function(){
+    	if(iV.accName()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-accBank").on("click",function(){
+    	if(iV.accBank()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-accNum").on("click",function(){
+    	if(iV.accNum()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-busContacts").on("click",function(){
+    	if(iV.busContacts()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-cPhone").on("click",function(){
+    	if(iV.cPhone()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-cEmail").on("click",function(){
+    	if(iV.cEmail()){
+    		saveFun($(this))
+    	};
+    })
+    $("#btn-cAddress").on("click",function(){
+    	if(iV.cAddress()){
+    		saveFun($(this))
+    	};
+    })
+      /*保存 e*/
+    $(".es-tblues").on("click",function(){
+    	$(this).parent().siblings().find(".es-select-bi").removeAttr("disabled");
+    })
+    var iMv = new mValidate();
+    var selGyl=$("#selGyl"),
+				selLx=$("#selLx"),
+				cName =$("#cName"),
+				socialCredit=$("#socialCredit"),
+				busLic=$("#busLic"),
+				orgIns=$("#orgIns"),
+				Tax=$("#Tax"),
+				bankPermit=$("#bankPermit"),
+				corName=$("#corName"),
+				corCard=$("#corCard"),
+				accName=$("#accName"),
+				accBank=$("#accBank"),
+				accNum=$("#accNum"),
+				busContacts=$("#busContacts"),
+				cPhone=$("#cPhone"),
+				cEmail=$("#cEmail"),
+				cAddress=$("#cAddress");
+
+			var validateForm_ =function(){//验证方法
+			}
+			validateForm_.prototype={
+				selGyl:function(){//供应链
+					if( selGyl.val()=="-1" ){
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择供应链");
+						return false;
+					}else{
+						var iObj = selGyl.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				selLx:function(){//所属类型
+					if( selLx.val()=="-1" ){
+						var iObj = selLx.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请选择所属类型");
+						return false;
+					}else{
+						var iObj = selLx.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cName:function(){//姓名
+					if (!iMv.isEmpty(cName.val())) {//验证空
+						var iObj = cName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入企业名称");
+						return false;
+					}else{
+						var iObj = cName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				socialCredit:function(){//营业执照
+					if (!iMv.isEmpty(socialCredit.val())) {//验证空
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入18位统一社会信用代码");
+						return false;
+					}
+					if (!iMv.vScredit(socialCredit.val())) {//验证格式 15位或18位数字
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "统一社会信用代码格式错误");
+						return false;
+					}else{
+						var iObj = socialCredit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				busLic:function(){//营业执照
+					if (!iMv.isEmpty(busLic.val())) {//验证空
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入营业执照编号");
+						return false;
+					}
+					if (!iMv.vLic(busLic.val())) {//验证格式 15位或18位数字
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "营业执照编号格式错误");
+						return false;
+					}else{
+						var iObj = busLic.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				orgIns:function(){//组织机构代码
+					if (!iMv.isEmpty(orgIns.val())) {//验证空
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入组织机构代码");
+						return false;
+					}
+					if (!iMv.vOrcode(orgIns.val())) {//格式 数字+字母
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "组织机构代码格式错误");
+						return false;
+					}else{
+						var iObj = orgIns.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				Tax:function(){//税务登记号
+					if (!iMv.isEmpty(Tax.val())) {//验证空
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入营业执照编号");
+						return false;
+					}
+					if (!iMv.vLic(Tax.val())) {//验证格式 15位或18位数字
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "税务登记号格式错误");
+						return false;
+					}else{
+						var iObj = Tax.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				bankPermit:function(){//开户银行许可证
+					if (!iMv.isEmpty(bankPermit.val())) {//验证空
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户银行许可证");
+						return false;
+					}
+					if (!iMv.vPermit(bankPermit.val())) {//
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "开户银行许可证格式错误");
+						return false;
+					}else{
+						var iObj = bankPermit.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				corName:function(){//法人姓名
+					if (!iMv.isEmpty(corName.val())) {//验证空
+						var iObj = corName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入法人姓名");
+						return false;
+					}else{
+						var iObj = corName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				corCard:function(){//身份证
+					if (!iMv.isEmpty(corCard.val())) {//验证空
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入法人身份证号");
+						return false;
+					}
+					if (!_idcardno(corCard.val())) {//
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "身份证号码格式错误");
+						return false;
+					}else{
+						var iObj = corCard.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accName:function(){//开户名
+					if (!iMv.isEmpty(accName.val())) {//验证空
+						var iObj = accName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户名");
+						return false;
+					}else{
+						var iObj = accName.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accBank:function(){//开户行
+					if (!iMv.isEmpty(accBank.val())) {//验证空
+						var iObj = accBank.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户行");
+						return false;
+					}else{
+						var iObj = accBank.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				accNum:function(){//开户账号
+					if (!iMv.isEmpty(accNum.val())) {//验证空
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入开户账号");
+						return false;
+					}else if (!iMv.vBnum(accNum.val())) {//验格式 20位数字
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入正确的开户账号");
+						return false;
+					}{
+						var iObj = accNum.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				busContacts:function(){
+					if (!iMv.isEmpty(busContacts.val())) {//验证空
+						var iObj = busContacts.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入企业联系人姓名");
+						return false;
+					}else{
+						var iObj = busContacts.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cPhone:function(){
+					if (!iMv.isEmpty(cPhone.val())) {//验证空
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入联系人手机号");
+						return false;
+					}
+					if (!iMv.mobile(cPhone.val())) {//验证格式 15位或18位数字
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "联系人手机号格式错误");
+						return false;
+					}else{
+						var iObj = cPhone.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cEmail:function(){//邮箱
+					if (!iMv.isEmpty(cEmail.val())) {//验证空
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入邮箱地址");
+						return false;
+					}
+					if (!iMv.email(cEmail.val())) {//
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "邮箱地址格式错误");
+						return false;
+					}else{
+						var iObj = cEmail.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				},
+				cAddress:function(){//联系地址
+					if (!iMv.isEmpty(cAddress.val())) {//验证空
+						var iObj = cAddress.siblings(".es-error-msg");
+						errorInfoShow(iObj, "请输入联系地址");
+						return false;
+					}else{
+						var iObj = cAddress.siblings(".es-error-msg");
+						errorInfoShow(iObj, "");
+					}
+					return true;
+				}
+			};
+			//绑定验证信息
+			var iV = new validateForm_();
+			selGyl.on("blur input",function(){
+				iV.selGyl();
+			});
+			socialCredit.on("blur input",function(){
+				iV.socialCredit();
+			})
+			selLx.on("blur input",function(){
+				iV.selLx();
+			});
+			cName.on("blur input",function(){
+				iV.cName();
+			});
+			busLic.on("blur input",function(){
+				iV.busLic();
+			});
+			orgIns.on("blur input",function(){
+				iV.orgIns();
+			});
+			Tax.on("blur input",function(){
+				iV.Tax();
+			});
+			bankPermit.on("blur input",function(){
+				iV.bankPermit();
+			});
+			corName.on("blur input",function(){
+				iV.corName();
+			});
+			corCard.on("blur input",function(){
+				iV.corCard();
+			});
+			accName.on("blur input",function(){
+				iV.accName();
+			});
+			accBank.on("blur input",function(){
+				iV.accBank();
+			});
+			accNum.on("blur input",function(){
+				iV.accNum();
+			});
+			busContacts.on("blur input",function(){
+				iV.busContacts();
+			});
+			cPhone.on("blur input",function(){
+				iV.cPhone();
+			});
+			cEmail.on("blur input",function(){
+				iV.cEmail();
+			});
+			cAddress.on("blur input",function(){
+				iV.cAddress();
+			});
+			//下一步
+			
+			function isBc(obj){
+				return $(obj).parent().siblings().find(".es-mody").css("display")=="block"
+			}
+			$(".es-upBtn2").on("click",function(){
+				if(isBc($("#selGyl"))){
+					var iObj = $("#selGyl").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#selLx"))){
+					var iObj = $("#selLx").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#cName"))){
+					var iObj = $("#cName").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#socialCredit"))){
+					var iObj = $("#socialCredit").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#busLic"))){
+					var iObj = $("#busLic").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#orgIns"))){
+					var iObj = $("#orgIns").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#Tax"))){
+					var iObj = $("#Tax").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#bankPermit"))){
+					var iObj = $("#bankPermit").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#corName"))){
+					var iObj = $("#corName").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#corCard"))){
+					var iObj = $("#corCard").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#accName"))){
+					var iObj = $("#accName").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#accNum"))){
+					var iObj = $("#accNum").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#busContacts"))){
+					var iObj = $("#busContacts").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#cPhone"))){
+					var iObj = $("#cPhone").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#cEmail"))){
+					var iObj = $("#cEmail").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				if(isBc($("#cAddress"))){
+					var iObj = $("#cAddress").siblings(".es-error-msg");
+					errorInfoShow(iObj, "请先保存");
+					return false;
+				}
+				
+				return true;
+			
+			})
+    
+</script>
+</html>

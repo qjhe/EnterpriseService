@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>
+		    <div class="es-login-info3 fr">
+		    	<a href="#">返回首页</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex" style="background: #F6F6F6;">
+				<div class="es-errWrap">
+					<dl class="clearFiex es-errdl es-err404">
+						<dt class="fl"><img src="images/errorPic/err404.png"/></dt>
+						<dd class="fl">
+							<p class="es-ddimg"><img src="images/errorPic/err404_01.png"/></p>
+							<p class="es-ddtit">很抱歉！您所访问的页面暂时无法找到！</p>
+							<p class="es-ddbtn"><a href="#">返回上一页 </a>或&nbsp;&nbsp;<a href="#">返回首页</a></p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter" style="background: #fff;">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/esValidate.js"></script>
+		<script>
+			//错误提示信息
+		    function errorInfoShow(obj, msg) {
+		        obj.show();
+		        if (msg != "") {
+		            obj.removeClass("es-right").addClass("es-error");
+		            obj.find("span").html(msg);
+		        } else {
+		            obj.removeClass("es-error").addClass("es-right");
+		            obj.find("span").html(msg);
+		        }
+		    }
+			function validateForm() {
+				if ($("#es-file-z").val() == "") {
+		            var iObj = $("#es-file-z").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证正面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-z").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-f").val() == "") {
+		            var iObj = $("#es-file-f").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证反面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-f").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-s").val() == "") {
+		            var iObj = $("#es-file-s").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传手持身份证照片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-s").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        return true;
+			}
+			$(".es-upBtn2").on("click",function(){
+				if(validateForm()){
+					$("#cb-form").submit();
+				};
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 注册</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item active">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo es-c-binfo1">
+						<form action="" method="post" id="cb-form">
+						<div class="es-cb-item">
+		                    <div class="es-cb-input">
+		                        <span class="es-cb-name">法定代表人身份证正面</span>
+		                        <input type="button" id="" value="上传文件" class="upLoadBtn" onclick="$('#es-file-z').click();"/>
+		                        <input type="file" name="" id="es-file-z" value="" hidden="hidden"/>
+		                        <p class="up-tip1">您可以上传JPG、GIF或PNG文件<br/>上传图片最大500K</p>
+		                        <p class="es-error-msg"><em></em><span></span></p>
+		                        <div class="es-picBox" style="display: none;">
+		                        	<span>删除</span>
+		                        	<div class="es-pic">
+		                        	</div>
+		                        </div>
+		                    </div>
+		                    <p class="es-cb-info">&nbsp;</p>
+		                </div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+		                        <span class="es-cb-name">法定代表人身份证反面</span>
+		                        <input type="button" id="" value="上传文件" class="upLoadBtn" onclick="$('#es-file-f').click();"/>
+		                        <input type="file" name="" id="es-file-f" value="" hidden="hidden"/>
+		                        <p class="up-tip1">您可以上传JPG、GIF或PNG文件<br/>上传图片最大500K</p>
+		                        <p class="es-error-msg"><em></em><span></span></p>
+		                        <div class="es-picBox" style="display: none;">
+		                        	<span>删除</span>
+		                        	<div class="es-pic">
+		                        	</div>
+		                        </div>
+		                    </div>
+		                    <p class="es-cb-info">&nbsp;</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+		                        <span class="es-cb-name">手持身份证照片</span>
+		                        <input type="button" id="" value="上传文件" class="upLoadBtn" onclick="$('#es-file-s').click();"/>
+		                        <input type="file" name="" id="es-file-s" value="" hidden="hidden"/>
+		                        <p class="up-tip1">您可以上传JPG、GIF或PNG文件<br/>上传图片最大500K</p>
+		                        <p class="es-error-msg"><em></em><span></span></p>
+		                        <div class="es-picBox">
+		                        	<span>删除</span>
+		                        	<div class="es-pic">
+		                        		<img src="images/espic_03.jpg"/>
+		                        	</div>
+		                        </div>
+		                    </div>
+		                    <p class="es-cb-info">&nbsp;</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="button" name="" id="" value="上一步" class="es-upBtn"/>
+								<input type="button" name="" id="" value="提交审核" class="es-upBtn2 active"/>
+							</div>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/esValidate.js"></script>
+		<script>
+			//错误提示信息
+		    function errorInfoShow(obj, msg) {
+		        obj.show();
+		        if (msg != "") {
+		            obj.removeClass("es-right").addClass("es-error");
+		            obj.find("span").html(msg);
+		        } else {
+		            obj.removeClass("es-error").addClass("es-right");
+		            obj.find("span").html(msg);
+		        }
+		    }
+			function validateForm() {
+				if ($("#es-file-z").val() == "") {
+		            var iObj = $("#es-file-z").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证正面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-z").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-f").val() == "") {
+		            var iObj = $("#es-file-f").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传法定代表人身份证反面图片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-f").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        if ($("#es-file-s").val() == "") {
+		            var iObj = $("#es-file-s").siblings(".es-error-msg");
+           			 errorInfoShow(iObj, "请上传手持身份证照片");
+		            return false;
+		        }else{
+		        	 var iObj = $("#es-file-s").siblings(".es-error-msg");
+            		errorInfoShow(iObj, "");
+		        }
+		        
+		        return true;
+			}
+			$(".es-upBtn2").on("click",function(){
+				if(validateForm()){
+					$("#cb-form").submit();
+				};
+			})
+			
+		</script>
+	</body>
+</html>

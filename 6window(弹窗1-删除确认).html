@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc">
+	<div class="meda"></div>
+	<div class="del-dialog-box" style="display: block;">
+		<h4><span class="diaClose close fr"></span>删除</h4>
+		<p class="del-tip"><em class="exmark"></em>确定删除选中的信息吗？</p>
+		<p class="del-btn">
+			<span id=""  class="es-btn none1 diacanc">取消</span>
+			<span id="" class="es-btn diaOk" style="margin-left: 10px;">确认</span>
+		</p>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//关闭弹窗
+$(".diaClose").on("click",function(){
+	$(".del-dialog-box").hide();}
+);
+$(".diacanc").on("click",function(){
+	$(".del-dialog-box").hide();}
+); 
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务管理系统 · 登录</h2>
+		    </div>
+		    
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-logcon es-comWidth">
+			<div class="es-lpBox clearFiex">
+				<div class="es-lpgincon">
+					<h1>登录</h1>
+					<div class="es-login_input es-my">
+						<form id="loginForm" action="http://www.baidu.com" method="post">
+						<ul>
+							<li class="es-error_box"><span class="es-login_jg"></span>&nbsp;用户名或密码错误</li>
+							<li class="es-login-ali">
+								<span class="es-login_icon"><em class="es-login_user"></em></span>
+								<input type="text" name="username" id="phoNum" class="es-phoNum" value="" placeholder="请输入手机号码" />
+								<span class="es-login_tipicon es-errIcon" style="display: none;"></span>
+								<p class="es-login-errormsg">请输入手机号码</p>
+							</li>
+							<li>
+								<span class="es-login_icon "><em class="es-login_user es-iconpsw"></em></span>
+								<input type="password" name="password" id="psw" class="es-phoNum es-password" value="" max="18" maxlength="18" placeholder="请输入登录密码" />
+								<span class="es-login_tipicon es-errIcon" style="display: none;"></span>
+								<p class="es-login-errormsg">请输入登录密码</p>
+							</li>
+							<li style="margin-top:15px;">
+								<p class="es-remWord">
+									<input type="checkbox" id="check_enter" checked="checked" name="remember"  value="remember" /> 
+									<span>记住登录账号</span>
+								</p>
+							</li>
+							<li class="es-loginBtn">
+								<span><a id="LoginIn" href="javascript:;" class="es-sub0">登 录</a></span>
+								<p class="clearFiex"><a href="/user/resetPassword" style="float: right;">忘记密码？</a></p>
+							</li>
+						</ul>
+						</form>
+					</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+		<script>
+			localStorage&&localStorage.phoNum&&$('#phoNum').val(localStorage.phoNum);
+			var iMv = new mValidate();
+
+			$("#LoginIn").on("click",function(){
+				if( validateForm() ){
+					//$("#loginForm").submit();//验证通过post数据
+					$(".es-error_box").slideDown();//后台返回错误--账号||密码 错误
+				}
+
+			})
+			$("#phoNum").on("blur input",function(){
+				//账号
+				var oPhoNum = $("#phoNum");
+				if (!iMv.isEmpty(oPhoNum.val())) {//验证空
+					showErrorMsg(oPhoNum,"请输入登录账号");
+					return false;
+				}
+				if (!iMv.vAccNum(oPhoNum.val())) {
+					showErrorMsg(oPhoNum,"5-25位字符，由字母、数字、点(.)、减号(-)或下划线(_)组成");
+					return false;
+				}else{
+					showErrorMsg(oPhoNum,"");
+				}
+			});
+			//密码
+			$("#psw").on("blur input",function(){
+				//账号
+				var oPsw = $("#psw");
+				if (!iMv.isEmpty(oPsw.val())) {//验证空
+					showErrorMsg(oPsw,"请输入登录密码");
+					return false;
+				}
+				if (!iMv.vLength(oPsw.val())) {
+					showErrorMsg(oPsw,"您输入的密码长度不正确");
+					return false;
+				}else if (!iMv.vPwd(oPsw.val())) {
+					showErrorMsg(oPsw,"您输入的密码格式不正确");
+					return false;
+				}else{
+					showErrorMsg(oPsw,"");
+				}
+			})
+
+			//验证登录信息
+			function validateForm() {
+				var oPhoNum = $("#phoNum");
+				var oPsw = $("#psw");
+
+				if (!iMv.isEmpty(oPhoNum.val())) {//验证空
+					showErrorMsg(oPhoNum,"请输入登录账号");
+					return false;
+				}
+				if (!iMv.mobile(oPhoNum.val())) {
+					showErrorMsg(oPhoNum,"手机号码格式错误");
+					return false;
+				}else{
+					showErrorMsg(oPhoNum,"");
+				}
+
+				if (!iMv.isEmpty(oPsw.val())) {//验证空
+					showErrorMsg(oPsw,"请输入登录密码");
+					return false;
+				}
+				if (!iMv.vLength(oPsw.val())) {
+					showErrorMsg(oPsw,"您输入的密码长度不正确");
+					return false;
+				}else if (!iMv.vPwd(oPsw.val())) {
+					showErrorMsg(oPsw,"您输入的密码格式不正确");
+					return false;
+				}else{
+					showErrorMsg(oPsw,"");
+				}
+				//记住密码
+				if($("#check_enter").prop("checked")){
+					localStorage&&(localStorage.phoNum=$("#phoNum").val());
+				}else{
+					localStorage&&localStorage.removeItem("phoNum");
+				}
+
+				return true;
+			}
+
+
+
+
+		//显示错误信息
+		function showErrorMsg(obj,msg){
+			if(msg!=""){
+				obj.siblings(".es-login_tipicon").addClass("es-errIcon").show();
+				obj.siblings(".es-login-errormsg").html(msg).show();
+			}else{
+				obj.siblings(".es-login_tipicon").removeClass("es-errIcon").show();
+				obj.siblings(".es-login-errormsg").html(msg).show();
+			}
+		}
+
+	</script>
+	</body>
+</html>

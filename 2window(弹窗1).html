@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+</head>
+<body style="background:#ccc">
+	<div class="es-dialog-box">
+		<h4><span class="diaClose close fr"></span><span class="icon"></span>修改信息</h4>
+		<ul class="list">
+			<li><label for="vroleName">角色名称</label>
+				<input disabled id="vroleName" name="vroleName" type="text" placeholder="财务部">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vloginUser">登录账号</label>
+				<input disabled id="vloginUser" name="vloginUser" type="text" placeholder="HSPH_HRZD">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vloginPwd">登录密码</label>
+				<input id="vloginPwd" name="vloginPwd" type="text" placeholder="请填写登录密码">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vnickName">昵称</label>
+				<input id="vnickName" name="vnickName" type="text" placeholder="请填写部门负责人">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vresponsible">负责人</label>
+				<input id="vresponsible" name="vresponsible" type="text" placeholder="请填写部门负责人">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vphone">手机号码</label>
+				<input id="vphone" name="vphone" type="text" placeholder="请绑定手机号码">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for="vmail">电子邮箱</label>
+				<input id="vmail" name="vmail" type="text" placeholder="请填写接收通知的邮箱">
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+			<li><label for=""></label>
+				<span class="es-btn diaOk">确定</span><span class="es-btn none diaClose">取消</span>
+				<p class="es-error-msg"><em></em><span></span></p>
+			</li>
+		</ul>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//打开弹窗
+$(".es-dialog-box").addClass("active");
+//关闭弹窗
+$(".diaClose").on("click",function(){$(".es-dialog-box").removeClass("active");});
+//开始验证
+var iMv = new mValidate();
+var vroleName=$("#vroleName"),vloginUser=$("#vloginUser"),vloginPwd=$("#vloginPwd"),vnickName=$("#vnickName"),vresponsible=$("#vresponsible"),vphone=$("#vphone"),vmail=$("#vmail");
+var iV={
+	vroleName:function(){//角色名称
+		var iObj = vroleName.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vroleName.val())){
+			errorInfoShow(iObj, "请填写角色名称");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vloginUser:function(){//登录账号
+		var iObj = vloginUser.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vloginUser.val())){
+			errorInfoShow(iObj, "请填写登录账号");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vloginPwd:function(){//登录密码
+		var iObj = vloginPwd.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vloginPwd.val())){
+			errorInfoShow(iObj, "请填写登录密码");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vnickName:function(){//部门负责人
+		var iObj = vnickName.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vnickName.val())){
+			errorInfoShow(iObj, "请填写部门负责人");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vresponsible:function(){//部门负责人
+		var iObj = vresponsible.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vresponsible.val())){
+			errorInfoShow(iObj, "请填写部门负责人");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vphone:function(){//手机号码
+		var iObj = vphone.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vphone.val())){
+			errorInfoShow(iObj, "请绑定手机号码");
+			return false;
+		}
+		if(!iMv.mobile(vphone.val())){
+			errorInfoShow(iObj, "手机号码格式错误");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	},
+	vmail:function(){//接收通知的邮箱
+		var iObj = vmail.siblings(".es-error-msg");
+		if(!iMv.isEmpty(vmail.val())){
+			errorInfoShow(iObj, "请填写接收通知的邮箱");
+			return false;
+		}
+		if(!iMv.email(vmail.val())){
+			errorInfoShow(iObj, "邮箱格式错误");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	}
+};
+vroleName.on("blur",iV.vroleName);
+vloginUser.on("blur",iV.vloginUser);
+vloginPwd.on("blur",iV.vloginPwd);
+vnickName.on("blur",iV.vnickName);
+vresponsible.on("blur",iV.vresponsible);
+vphone.on("blur",iV.vphone);
+vmail.on("blur",iV.vmail);
+//提交表单
+$(".diaOk").on("click",function(){//iV.vroleName() && iV.vloginUser() && 
+	if( iV.vloginPwd() && iV.vnickName() && iV.vresponsible() && iV.vphone() && iV.vmail() ){
+		alert("验证通过");
+	}
+});
+</script>
+</body>
+</html>

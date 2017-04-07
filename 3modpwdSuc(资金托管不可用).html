@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body style="background: #f6f6f6;">
+		<div id="esHeader" class="es-comWidth clearFiex" style="background: #fff;">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务</h2>
+		    </div>
+		    <ul class="es-nav fl">
+		        <li>首页</li>
+		    	<li class="active">企业信息</li>
+		        <li>角色管理</li>
+		        <li>流程管理</li>
+		        <li>账户设置</li>
+		    </ul>
+		    <div class="es-login-info es-login-info2 fr">
+				<p>欢迎您，<br />北京恒善信诚科技有限公司</p>
+				<a href="javascript:;">退出</a>
+		    </div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-acc-set es-comWidth clearFiex">
+			<div class="es-acc-nav fl">
+				<ul class="es-acc-box">
+					<li>
+						<a class="active" href="#">资金托管</a>
+					</li>
+					<li>
+						<a href="#">修改密码</a>
+					</li>
+				</ul>
+			</div>
+			<div class="es-acc-content">
+				<h1 class="es-cb-tit es-cb-tit1"><em></em>开通“易宝支付”资金托管账户</h1>
+				<dl class="es-incon-dl es-acc-dl">
+					<dt class="es-r-p"><img src="images/winErrPic.png"/></dt>
+					<dd>
+						<h3 class="title">此功能暂时不可用</h3>
+						<p class="tipTxt">企业信息审核通过后，可使用该功能</p>
+						<p class="es-acct-btn"><a href="javascript:;" class="es-t-btn" style="width: 160px;">查看审核进度</a></p>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/esValidate.js"></script>
+		<script type="text/javascript">
+			//错误提示信息
+		    function errorInfoShow(obj, msg) {
+		        obj.show();
+		        if (msg != "") {
+		            obj.removeClass("es-right").addClass("es-error");
+		            obj.find("span").html(msg);
+		        } else {
+		            obj.removeClass("es-error").addClass("es-right");
+		            obj.find("span").html(msg);
+		        }
+		    }
+		    $(".es-cbinput").on("focus", function () {
+		        $(this).addClass("active");
+		        $(this).parent().siblings(".es-cb-info").addClass("active");
+		    })
+		    $(".es-cbinput").on("blur", function () {
+		        $(this).removeClass("active");
+		        $(this).parent().siblings(".es-cb-info").removeClass("active");
+		    })
+		    var iMv = new mValidate();
+		    //失去焦点原始密码验证 s
+		    $("#origPwdT").on("blur input",function(){
+		    	if (!iMv.isEmpty($("#origPwdT").val())) {//验证空
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入原始密码");
+		            return false;
+		        }
+		    	if (!iMv.vPwd($("#origPwdT").val())) {//验证格式 
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else{
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		    });
+			//失去焦点新密码验证 s
+			$("#newPwd1").on("blur input",function(){
+				if (!iMv.isEmpty($("#newPwd1").val())) {//验证空
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入新密码");
+		            return false;
+		        }
+				if (!iMv.vPwd($("#newPwd1").val())) {//验证格式 
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else if(iMv.vEqualTo($("#origPwdT").val(),$("#newPwd1").val())){
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码与原始密码重复了");
+		            return false;
+		        }else{
+		        	 var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+				
+			})
+			//失去焦点新2密码验证 s
+			$("#newPwd2").on("blur input",function(){
+				if (!iMv.isEmpty($("#newPwd2").val())) {//验证空
+		            var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请再次输入新密码");
+		            return false;
+		        }
+				if(!iMv.vEqualTo($("#newPwd1").val(),$("#newPwd2").val())){
+		            var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "两次密码输入不一致");
+		            return false;
+		        }else{
+		        	 var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+			})
+			//失去焦点验证 e
+			
+			//表单验证  修改密码
+			function validate(){
+				if (!iMv.isEmpty($("#origPwdT").val())) {//验证空
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入原始密码");
+		            return false;
+		        }
+		    	if (!iMv.vPwd($("#origPwdT").val())) {//验证格式 
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else{
+		            var iObj = $("#origPwdT").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        
+		        /**/
+		       if (!iMv.isEmpty($("#newPwd1").val())) {//验证空
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入新密码");
+		            return false;
+		        }
+				if (!iMv.vPwd($("#newPwd1").val())) {//验证格式 
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else if(iMv.vEqualTo($("#origPwdT").val(),$("#newPwd1").val())){
+		            var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码与原始密码重复了");
+		            return false;
+		        }else{
+		        	 var iObj = $("#newPwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        
+		        /**/
+		       if (!iMv.isEmpty($("#newPwd2").val())) {//验证空
+		            var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请再次输入新密码");
+		            return false;
+		        }
+				if(!iMv.vEqualTo($("#newPwd1").val(),$("#newPwd2").val())){
+		            var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "两次密码输入不一致");
+		            return false;
+		        }else{
+		        	 var iObj = $("#newPwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        
+		        return true;
+			}
+			
+			$("#es-comBtn").on("click",function(){
+				if(validate()){
+					var oldPwd=$.md5($("#origPwdT").val()),
+					newPwd=$.md5($("#newPwd1").val());
+					updatePwd(oldPwd,newPwd);//修改密码
+				}
+			})
+			
+			//修改密码
+			function updatePwd(orPwd,newPwd){
+				$.post('',{originalPassword:orPwd,newPassword:newPwd},
+				function(result){
+					if(result.errorCode==0){
+						
+					}else{
+					}
+				},'json');
+			}
+		</script>
+	</body>
+</html>

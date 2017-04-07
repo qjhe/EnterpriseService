@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+</head>
+<body style="background:#ccc">
+	<button id="btn">点击</button>
+	<div class="meda"></div>
+	<div class="es-dialog-box es-dialog-box-p">
+		<h4><span class="diaClose close fr"></span>工资详情</h4>
+		<form action="">
+			<div class="payBox">
+				<div class="payWrap">
+					<h1>用户信息</h1>
+					<ul class="paylist clearFiexHidden">
+						<li><span class="paylist-tit">姓名</span><span>小明</span></li>
+						<li><span class="paylist-tit">易宝资金账户</span><span>7392038778</span></li>
+						<li><span class="paylist-tit">身份证号</span><span>7392038778022207493</span></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="payWrap">
+					<h1>工资标准</h1>
+					<ul class="paylist clearFiexHidden">
+						<li><span class="paylist-tit">基本工资</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">应出勤天数</span><span>21.65</span></li>
+						<li><span class="paylist-tit">岗位津贴</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">其他补贴</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">应发工资1</span><span>100,000.00</span></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="payWrap">
+					<h1>加项目</h1>
+					<ul class="paylist clearFiexHidden">
+						<li><span class="paylist-tit">加班费</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">奖金/提成</span><span>21.65</span></li>
+						<li><span class="paylist-tit">其他补贴</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">补发</span><span>100,000.00</span></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="payWrap">
+					<h1>减项目</h1>
+					<ul class="paylist clearFiexHidden">
+						<li><span class="paylist-tit">请假扣减</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">其他扣减</span><span>2000</span></li>
+						<li><span class="paylist-tit">应发工资2</span><span>100,000.00</span></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="payWrap">
+					<h1>代扣款项</h1>
+					<ul class="paylist clearFiexHidden">
+						<li><span class="paylist-tit">社保</span><span>100,000.00</span></li>
+						<li><span class="paylist-tit">公积金</span><span>2000</span></li>
+						<li><span class="paylist-tit">个人所得税</span><span>100,000.00</span></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="payWrap">
+					<h1>实发工资</h1>
+					<ul class="paylist clearFiexHidden">
+						<li class="last"><span class="paylist-tit">实发工资</span><span class="high">1100,000.00</span></li>
+					</ul>
+				</div>
+				<div class="pay-btn">
+					<span class="es-btn diaOk">保存</span><span class="es-btn none diaClose">取消</span>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+
+
+//打开弹窗
+function openFun(){
+	$(".meda").show();
+	$(".es-dialog-box").show();
+}
+//关闭弹窗
+function closeFun(){
+	$(".meda").hide();
+	$(".es-dialog-box").hide();
+}
+$("#btn").on("click",openFun);
+$(".diaClose").on("click",closeFun);
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>申请证书</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/ecJs.js"></script>
+    <script src="js/esValidate.js"></script>
+</head>
+<body>
+<div id="esHeader" class="es-comWidth clearFiex">
+    <div class="es-logo-area clearFiex fl">
+        <a class="es-logo-a fl" href="javascript:;"></a>
+
+        <h2 class="fl">恒善普惠 · 企业服务管理系统 </h2>
+    </div>
+    <ul class="es-nav fl">
+        <li class="active">企业管理</li>
+        <li>修改密码</li>
+    </ul>
+    <div class="es-login-info fr"><span>欢迎您，<font>admin</font></span><a href="javascript:;">退出</a></div>
+</div>
+<!--头部结束-->
+
+<!--主体开始-->
+<div class="es-tcon">
+    <div class="es-containBox">
+        <h1 class="es-cb-tit"><em></em>申请证书</h1>
+
+        <div class="es-cb-con">
+            <form id="myForm" action="http://www.baidu.com" method="post">
+                <div class="es-cb-item">
+                    <div class="es-cb-input clearFiex">
+                        <span class="es-cb-name">营业执照编号</span>
+                        <input type="text" name="license" id="license" value="" placeholder="请输入营业执照编号"
+                               class="es-cbinput"/>
+
+                        <p class="es-error-msg"><em></em><span>ddd</span></p>
+                    </div>
+                    <p class="es-cb-info">请输入15位营业执照注册号或18位的统一社会信用代码</p>
+                </div>
+                <div class="es-cb-item">
+                    <div class="es-cb-input">
+                        <span class="es-cb-name">组织机构代码</span>
+                        <input type="text" name="orgCode" id="orgCode" value="" placeholder="请填写组织机构代码"
+                               class="es-cbinput"/>
+
+                        <p class="es-error-msg"><em></em><span></span></p>
+                    </div>
+                    <p class="es-cb-info">请输入15位营业执照注册号或18位的统一社会信用代码</p>
+                </div>
+                <div class="es-cb-item">
+                    <div class="es-cb-input">
+                        <span class="es-cb-name">税务登记号</span>
+                        <input type="text" name="taxNum" id="taxNum" value="" placeholder="请填写税务登记号"
+                               class="es-cbinput"/>
+                        <p class="es-error-msg"><em></em><span></span></p>
+                    </div>
+                    <p class="es-cb-info">税务登记号为15位或输入18位的统一社会信用代码</p>
+                </div>
+                <div class="es-cb-item">
+                    <div class="es-cb-input">
+                        <span class="es-cb-name">空白页面加盖公章复印件（公章清晰可见）</span>
+                        <input type="button" id="" value="上传文件" class="upLoadBtn" onclick="$('#es-file').click();"/>
+                        <input type="file" name="" id="es-file" value="" hidden="hidden"/>
+                        <span class="up-tip">您可以上传JPG、GIF或PNG文件<br/>上传图片最大500K</span>
+                    </div>
+                    <p class="es-cb-info">&nbsp;</p>
+                </div>
+                <div class="es-cb-item">
+                    <div class="es-cb-input">
+                        <span class="es-cb-name">&nbsp;</span>
+                        <input type="button" name="" id="esCbinput" value="提交申请" class=" es-cbinput1"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--主体结束-->
+<div class="es-tfooter">
+    <p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+</div>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(".es-cbinput").on("focus", function () {
+        $(this).addClass("active");
+        $(this).parent().siblings(".es-cb-info").addClass("active");
+    })
+    $(".es-cbinput").on("blur", function () {
+        $(this).removeClass("active");
+        $(this).parent().siblings(".es-cb-info").removeClass("active");
+    })
+
+    $("#esCbinput").click(function(){
+        if( validateForm() ){
+            $("#myForm").submit();
+        }
+    })
+    var iMv = new mValidate();
+    $("#license").on("blur input",function(){
+        if (!iMv.isEmpty($("#license").val())) {//验证空
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入营业执照编号");
+            return false;
+        }
+        if (!iMv.vLic($("#license").val())) {//验证格式 15位或18位数字
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "营业执照编号格式错误");
+            return false;
+        }else{
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+    })
+
+    $("#orgCode").on("blur input",function(){
+        //组织机构代码
+        if (!iMv.isEmpty($("#orgCode").val())) {//验证空
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入组织机构代码");
+            return false;
+        }
+        if (!iMv.vOrcode($("#orgCode").val())) {//格式 数字+字母
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "组织机构代码格式错误");
+            return false;
+        }else{
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+    })
+
+    $("#taxNum").on("blur input",function(){
+        //税务登记号
+        if (!iMv.isEmpty($("#taxNum").val())) {//验证空
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入营业执照编号");
+            return false;
+        }
+        if (!iMv.vLic($("#taxNum").val())) {//验证格式 15位或18位数字
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "税务登记号格式错误");
+            return false;
+        }else{
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+    })
+
+    function validateForm() {
+
+        if (!iMv.isEmpty($("#license").val())) {//验证空
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入营业执照编号");
+            return false;
+        }
+        if (!iMv.vLic($("#license").val())) {//验证格式 15位或18位数字
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "营业执照编号格式错误");
+            return false;
+        }else{
+            var iObj = $("#license").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+        //组织机构代码
+        if (!iMv.isEmpty($("#orgCode").val())) {//验证空
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入组织机构代码");
+            return false;
+        }
+        if (!iMv.vOrcode($("#orgCode").val())) {//格式 数字+字母
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "组织机构代码格式错误");
+            return false;
+        }else{
+            var iObj = $("#orgCode").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+        //税务登记号
+        if (!iMv.isEmpty($("#taxNum").val())) {//验证空
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "请输入营业执照编号");
+            return false;
+        }
+        if (!iMv.vLic($("#taxNum").val())) {//验证格式 15位或18位数字
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "税务登记号格式错误");
+            return false;
+        }else{
+            var iObj = $("#taxNum").siblings(".es-error-msg");
+            errorInfoShow(iObj, "");
+        }
+        //是否上传文件
+        if ($("#es-file").val() == "") {
+            alert("请上传文件");
+            return false;
+        }
+        return true;
+    }
+    //错误提示信息
+    function errorInfoShow(obj, msg) {
+        obj.show();
+        if (msg != "") {
+            obj.removeClass("es-right").addClass("es-error");
+            obj.find("span").html(msg);
+        } else {
+            obj.removeClass("es-error").addClass("es-right");
+            obj.find("span").html(msg);
+        }
+    }
+
+</script>
+</body>
+</html>

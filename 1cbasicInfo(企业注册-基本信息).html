@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 注册</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo">
+						<form action="" method="post" id="cb-form">
+						<div class="es-cb-item">
+							<div class="es-cb-input clearFiex">
+								<span class="es-cb-name">管理员账号</span>
+								<input type="text" name="manAccou" id="manAccou" value="" placeholder="5-25位字符，由字母、数字、或符号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">登录密码</span>
+								<input type="password" name="pwd1" id="pwd1" value="" placeholder="6-18位字符，包括英文字母、数字或符号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">确认密码</span>
+								<input type="password" name="pwd2" id="pwd2" value="" placeholder="请再次输入登录密码" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">手机号</span>
+								<input type="text" name="phonNum" id="phonNum" value="" placeholder="请输入手机号" class="es-cbinput" autocomplete="off" maxlength="11" max="11"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">图形验证码</span>
+								<input type="text" name="veiriCode" id="veiriCode" value="" placeholder="请输入验证码" class="es-cbinput es-cbinput0" autocomplete="off" max="4" maxlength="4"/>
+								<span class="es-t-yzm"><img src="images/es-yzm.png"/></span>
+								<span class="es-t-change">看不清，<em>换一张！</em></span>
+								<p class="es-error-msg" style="right: -187px;"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="checkbox" name="" id="agreCheck" class="" />
+								<span class="es-t-check">我同意并遵守<a href="javascript:;">《企业银行服务协议》</a></span>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input type="button" name="" id="" value="下一步" class="es-cbinput1"/>
+							</div>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/jQuery.md5.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/esValidate.js"></script>
+		<script>
+		/*input 聚焦，失焦样式*/
+		$(".es-cbinput").on("focus", function () {
+		    $(this).addClass("active");
+		    $(this).parent().siblings(".es-cb-info").addClass("active");
+		})
+		$(".es-cbinput").on("blur", function () {
+		    $(this).removeClass("active");
+		    $(this).parent().siblings(".es-cb-info").removeClass("active");
+		})
+	    var iMv = new mValidate();
+	    //管理员账号 s
+	    $("#manAccou").on("blur input",function(){
+	    	if (!iMv.isEmpty($("#manAccou").val())) {//验证空
+	            var iObj = $("#manAccou").siblings(".es-error-msg");
+	            errorInfoShow(iObj, "请输入管理员账号");
+	            return false;
+	        }
+	    	if (!iMv.vAccNum($("#manAccou").val())) {//验证格式
+	            var iObj = $("#manAccou").siblings(".es-error-msg");
+	            errorInfoShow(iObj, "5-25位字符，由字母、数字、点(.)、减号(-)或下划线(_)组成");
+	            return false;
+	        }else{
+	            var iObj = $("#manAccou").siblings(".es-error-msg");
+	            errorInfoShow(iObj, "");
+	        }
+	    });
+	    
+	     //登录密码 s
+	     $("#pwd1").on("blur input",function(){
+		    	if (!iMv.isEmpty($("#pwd1").val())) {//验证空
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入原始密码");
+		            return false;
+		        }
+		    	if (!iMv.vLengths($("#pwd1").val())) {//验证空
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码长度不足6位");
+		            return false;
+		        }else if (!iMv.vLengthb($("#pwd1").val())) {//验证空
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码长度大于18位");
+		            return false;
+		        }
+		    	else if (!iMv.vPwd($("#pwd1").val())) {//验证格式
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else{
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		    });
+		//确认登录密码 s
+	     $("#pwd2").on("blur input",function(){
+		    	if (!iMv.isEmpty($("#pwd2").val())) {//验证空
+		            var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请再次输入登录密码");
+		            return false;
+		        }
+				if(!iMv.vEqualTo($("#pwd1").val(),$("#pwd2").val())){
+		            var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "两次密码输入不一致");
+		            return false;
+		        }else{
+		        	 var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		    });
+		//手机号
+		 $("#phonNum").on("blur input",function(){
+		    	if (!iMv.isEmpty($("#phonNum").val())) {//验证空
+		            var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入手机号");
+		            return false;
+		        }
+				if(!iMv.mobile($("#phonNum").val())){
+		            var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "手机号格式错误");
+		            return false;
+		        }else{
+		        	 var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		    });
+		    //验证码
+		    $("#veiriCode").on("blur input",function(){
+		    	if (!iMv.isEmpty($("#veiriCode").val())) {//验证空
+		            var iObj = $("#veiriCode").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入验证码");
+		            return false;
+		        }else{
+		            var iObj = $("#veiriCode").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		    });
+		    
+		    $("#agreCheck").on("change",function(){
+		    	if ($("#agreCheck").is(':checked')) {//验证空
+		    		var iObj = $("#agreCheck").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }else{
+		            var iObj = $("#agreCheck").siblings(".es-error-msg");
+	            	errorInfoShow(iObj, "请先同意服务协议");
+		            return false;
+		        }
+		    });
+		    $(".es-cbinput1").click(function(){
+		    	if(validate()){
+				    var oldPwd=$.md5($("#pwd1").val());
+					$("#cb-form").submit();
+				}
+		    })
+		    
+	    	//表单验证 
+			function validate(){
+				/*账户  pwd*/
+				if (!iMv.isEmpty($("#manAccou").val())) {//验证空
+		            var iObj = $("#manAccou").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入管理员账号");
+		            return false;
+		        }
+		    	if (!iMv.vManAccou($("#manAccou").val())) {//验证格式 
+		            var iObj = $("#manAccou").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "5-25位字符，由字母、数字、点(.)、减号(-)或下划线(_)组成");
+		            return false;
+		        }else{
+		            var iObj = $("#manAccou").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        /*login pwd*/
+		        if (!iMv.isEmpty($("#pwd1").val())) {//验证空
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入原始密码");
+		            return false;
+		        }
+		    	if (!iMv.vPwd($("#pwd1").val())) {//验证格式 
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "密码必须为不包含空格非纯数字或纯字母的6~18位字符");
+		            return false;
+		        }else{
+		            var iObj = $("#pwd1").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        
+		        /*login pwd2*/
+		       if (!iMv.isEmpty($("#pwd2").val())) {//验证空
+		            var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请再次输入登录密码");
+		            return false;
+		        }
+				if(!iMv.vEqualTo($("#pwd1").val(),$("#pwd2").val())){
+		            var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "两次密码输入不一致");
+		            return false;
+		        }else{
+		        	 var iObj = $("#pwd2").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        /*phonenum*/
+		       if (!iMv.isEmpty($("#phonNum").val())) {//验证空
+		            var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入手机号");
+		            return false;
+		        }
+				if(!iMv.mobile($("#phonNum").val())){
+		            var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "手机号格式错误");
+		            return false;
+		        }else{
+		        	 var iObj = $("#phonNum").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		        
+		        /*验证码*/
+		       if (!iMv.isEmpty($("#veiriCode").val())) {//验证空
+		            var iObj = $("#veiriCode").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "请输入验证码");
+		            return false;
+		        }else{
+		            var iObj = $("#manAccou").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }
+		       if ($("#agreCheck").is(':checked')) {
+		    		var iObj = $("#agreCheck").siblings(".es-error-msg");
+		            errorInfoShow(iObj, "");
+		        }else{
+		            var iObj = $("#agreCheck").siblings(".es-error-msg");
+	            	errorInfoShow(iObj, "请先同意服务协议");
+		            return false;
+		        }
+		        return true;
+			}
+		</script>
+	</body>
+</html>

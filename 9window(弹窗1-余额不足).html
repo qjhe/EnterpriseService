@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc">
+	<div class="meda"></div>
+	<div class="del-dialog-box" style="display: block;">
+		<h4><span class="diaClose close fr"></span>余额不足</h4>
+		<p class="paydeti-p">账户余额<span>1200.00元</span></p>
+		<p class="del-tip" style="margin-top: 0;"><em class="exmark"></em>请登录企业银行进行备付金充值？</p>
+		<p class="del-btn">
+			<span id="" class="es-btn diaOk" style="margin-left: 10px;">知道了</span>
+		</p>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//关闭弹窗
+$(".diaClose").on("click",function(){
+	$(".del-dialog-box").hide();}
+);
+$(".diacanc").on("click",function(){
+	$(".del-dialog-box").hide();}
+); 
+</script>
+</body>
+</html>

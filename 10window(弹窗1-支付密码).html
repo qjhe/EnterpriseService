@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/adStyle.css"/>
+    <script src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="background:#ccc">
+
+<input type="button" value="支 付 支 付" class="repay-now"/>
+
+	<div class="meda"></div>
+	<div class="repay-pop-wrap">
+		<div class="repay-pop">
+			<div class="repay-pop-tit">
+				<span><strong class="or-color">请输入支付密码</strong>
+				<em class="p-pop-close"></em>
+			</div>
+			<div class="repay-pop-content">
+				<div class="pop-content-w">
+					<ul class="pay-info-list">
+						<li><span class="fl">账户余额</span>120,000元</li>
+						<li><span class="fl">支付金额</span><strong><em>123,432,567.00</em>元</strong></li>
+					</ul>
+					<div class="pop-input">
+						<div class="pop-input-area">
+                        	<span class="vc-n-grid">
+                                <span class="grid-item"></span>
+                                <span class="grid-item"></span>
+                                <span class="grid-item"></span>
+                                <span class="grid-item"></span>
+                                <span class="grid-item"></span>
+                                <span class="grid-item"></span>
+                            </span>
+							<div class="hid-block"></div>
+							<input id="verCode" type="text" value="" maxlength="6" unselectable />
+						</div>
+						<div class="loading ball-pulse" style="display:none;">
+							<div></div>
+							<div></div>
+							<div></div>
+							<em class="or-color">正在支付</em>
+						</div>
+					</div>
+					<p class="forget-pwd-q"><a href="javascript:void(0);" class="p-pop-close fr">忘记密码？</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/ecJs.js"></script>
+<script src="js/esValidate.js"></script>
+<script>
+//关闭弹窗
+$(".diaClose").on("click",function(){
+	$(".del-dialog-box").hide();}
+);
+$(".diacanc").on("click",function(){
+	$(".del-dialog-box").hide();}
+);
+
+//开始验证
+var iMv = new mValidate();
+var payPwd=$("#payPwd");
+var timeWay=$("#timeWay");
+var imWay=$("#imWay");
+var payway=$('input:radio[name="payWay"]');
+var Paydate=$("#Paydate");
+var iV={
+	payPwd:function(){//支付密码
+		var iObj = payPwd.siblings(".es-error-msg");
+		if(!iMv.isEmpty(payPwd.val())){
+			errorInfoShow(iObj, "请填写支付密码");
+			return false;
+		}else if(!iMv.vPwd(payPwd.val())){
+			errorInfoShow(iObj, "密码格式不正确");
+			return false;
+		}else{
+			errorInfoShow(iObj, "");
+			return true;
+		}
+	}
+};
+payPwd.on("blur input",iV.payPwd);
+payway.on("change",function(){
+	var val=$('input:radio[name="payWay"]:checked').val();
+	if(val=="1"){
+		$(".payTime").css("display","block");
+	}else{
+		$(".payTime").css("display","none");
+	}
+});
+function hideDate(){
+	$(".payTime").css("display","none");
+}
+//提交表单
+$(".diaOk").on("click",function(){
+	var val=$('input:radio[name="payWay"]:checked').val();
+	if( (iV.payPwd() && val=="0") || (iV.payPwd() && val=="1" && $("#Paydate").val()!="")){
+		alert("验证通过")
+		$("#myform").submit();
+	}
+});
+
+
+//监测验证码
+$("#verCode").keyup(function(){
+	var val_ = $(this).val();
+	if(val_.length>=6){
+		$(".pop-input-area").hide();
+		$(".ball-pulse").show();
+	}
+});
+repayPop();
+//借款支付弹框
+function repayPop(){
+	$(".p-pop-close").click(function(){
+		$(".repay-pop-wrap").hide();
+		$(".meba").hide();
+	})
+	$(".repay-now").click(function(){
+		$(".repay-pop-wrap").show();
+		$(".meba").show();
+	})
+}
+</script>
+</body>
+</html>

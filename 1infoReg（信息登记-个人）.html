@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+		<script src="js/esValidate.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 个人信息登记</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item active">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo">
+						<form action="" method="post">
+						<div class="es-cb-item">
+							<div class="es-cb-input clearFiex">
+								<span class="es-cb-name">供应链</span>
+								<select class="es-select-bi es-se-bin" id="selGyl">
+									<option value="-1">请选择所需的供应链</option>
+									<option value="1">bbbb</option>
+									<option value="2">cccc</option>
+									<option value="3">cccc</option>
+									<option value="4">cccc</option>
+								</select>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">所属类型</span>
+								<select class="es-select-bi es-se-bin" id="selLx">
+									<option value="-1">请选择所属类型</option>
+									<option value="1">bbbb</option>
+									<option value="2">cccc</option>
+									<option value="3">cccc</option>
+									<option value="4">cccc</option>
+								</select>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">姓名</span>
+								<input type="text" name="pName" id="pName" value="" placeholder="请填写姓名" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+							<p class="es-cb-info">如果名字包含分隔号“·”，请勿省略</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">身份证号</span>
+								<input type="text" name="pCard" id="pCard" value="" placeholder="请填写身份证号" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+							<p class="es-cb-info">身份证号为17位，若最后一位是X，请大写</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">邮箱</span>
+								<input type="text" name="pEmail" id="pEmail" value="" placeholder="请填写邮箱" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+							<p class="es-cb-info">1222@xxxx.com</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">联系地址</span>
+								<input type="text" name="pAddress" id="pAddress" value="" placeholder="请填写所在地" class="es-cbinput" autocomplete="off"/>
+								<p class="es-error-msg"><em></em><span></span></p>
+							</div>
+							<p class="es-cb-info">请填写个人用户所在地（省、市、具体地址）</p>
+						</div>
+						<div class="es-cb-item">
+							<div class="es-cb-input">
+								<span class="es-cb-name">&nbsp;</span>
+								<input class="es-ipt-up" type="button" value="上一步"><input class="es-ipt-down" type="button" value="下一步">
+							</div>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script>
+			var iMv = new mValidate();
+			var selGyl = $("#selGyl"),selLx = $("#selLx"),pName =$("#pName"),pCard = $("#pCard"),pEmail = $("#pEmail"),pAddress = $("#pAddress");
+
+			$(".es-cbinput").on("focus", function () {
+				$(this).addClass("active");
+				$(this).parent().siblings(".es-cb-info").addClass("active");
+			})
+			$(".es-cbinput").on("blur", function () {
+				$(this).removeClass("active");
+				$(this).parent().siblings(".es-cb-info").removeClass("active");
+			})
+
+
+			$(".es-ipt-down").on("click",function(){
+				if( validateForm() ){
+					alert("验证通过");
+				}
+			});
+
+			selGyl.on("blur input",function(){
+				//供应链
+				if( selGyl.val()=="-1" ){
+					var iObj = selGyl.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请选择供应链");
+					return false;
+				}else{
+					var iObj = selGyl.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+			});
+			selLx.on("blur input",function(){
+				//所属类型
+				if( selLx.val()=="-1" ){
+					var iObj = selLx.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请选择所属类型");
+					return false;
+				}else{
+					var iObj = selLx.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+			});
+			pName.on("blur input",function(){
+				//姓名
+				if (!iMv.isEmpty(pName.val())) {//验证空
+					var iObj = pName.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入姓名");
+					return false;
+				}else{
+					var iObj = pName.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+			});
+			pCard.on("blur input",function(){
+				//身份证
+				if (!iMv.isEmpty(pCard.val())) {//验证空
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入身份证号码");
+					return false;
+				}
+				if (!_idcardno(pCard.val())) {//
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "身份证号码格式错误");
+					return false;
+				}else{
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+			});
+			pEmail.on("blur input",function(){
+				//邮箱
+				if (!iMv.isEmpty(pEmail.val())) {//验证空
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入邮箱地址");
+					return false;
+				}
+				if (!iMv.email(pEmail.val())) {//
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "邮箱地址格式错误");
+					return false;
+				}else{
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+			});
+			pAddress.on("blur input",function(){
+				//联系地址
+				if (!iMv.isEmpty(pAddress.val())) {//验证空
+					var iObj = pAddress.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入联系地址");
+					return false;
+				}
+			});
+
+			function validateForm() {
+				//供应链
+				if( selGyl.val()=="-1" ){
+					var iObj = selGyl.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请选择供应链");
+					return false;
+				}else{
+					var iObj = selGyl.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+				//所属类型
+				if( selLx.val()=="-1" ){
+					var iObj = selLx.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请选择所属类型");
+					return false;
+				}else{
+					var iObj = selLx.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+				//姓名
+				if (!iMv.isEmpty(pName.val())) {//验证空
+					var iObj = pName.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入姓名");
+					return false;
+				}else{
+					var iObj = pName.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+				//身份证
+				if (!iMv.isEmpty(pCard.val())) {//验证空
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入身份证号码");
+					return false;
+				}
+				if (!_idcardno(pCard.val())) {//
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "身份证号码格式错误");
+					return false;
+				}else{
+					var iObj = pCard.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+				//邮箱
+				if (!iMv.isEmpty(pEmail.val())) {//验证空
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入邮箱地址");
+					return false;
+				}
+				if (!iMv.email(pEmail.val())) {//
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "邮箱地址格式错误");
+					return false;
+				}else{
+					var iObj = pEmail.siblings(".es-error-msg");
+					errorInfoShow(iObj, "");
+				}
+				//联系地址
+				if (!iMv.isEmpty(pAddress.val())) {//验证空
+					var iObj = pAddress.siblings(".es-error-msg");
+					errorInfoShow(iObj, "请输入联系地址");
+					return false;
+				}
+			}
+
+
+				//错误提示信息
+			function errorInfoShow(obj, msg) {
+				obj.show();
+				if (msg != "") {
+					obj.removeClass("es-right").addClass("es-error");
+					obj.find("span").html(msg);
+				} else {
+					obj.removeClass("es-error").addClass("es-right");
+					obj.find("span").html(msg);
+				}
+			}
+
+		</script>
+	</body>
+</html>

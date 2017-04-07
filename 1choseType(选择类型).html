@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title></title>
+	    <link href="css/esStyle.css" rel="stylesheet"/>
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/ecJs.js"></script>
+	</head>
+	<body>
+		<div id="esHeader" class="es-comWidth clearFiex">
+		    <div class="es-logo-area clearFiex fl">
+		        <a class="es-logo-a fl" href="javascript:;"></a>
+		
+		        <h2 class="fl">恒善普惠 · 企业服务 · 选择类型</h2>
+		    </div>
+		    <div class="es-login-info1 fr"><span>已有企业服务账户？ ｜ <a href="javascript:;">立即登录</a></div>
+		</div>
+		<!--头部结束-->
+		
+		<!--主体开始-->
+		<div class="es-tcon">
+			<div class="es-containBox clearFiex">
+				<div class="es-stepShow fl">
+					<div class="es-step-item active">
+						<p><span>01</span><br />基本信息</p>
+					</div>
+					<div class="es-step-item active">
+						<p style="left: 4px;"><span>02</span><br /><em style="letter-spacing: -2px;">验证手机号</em></p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item active">
+						<p><span>03</span><br />选择类型</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>04</span><br />信息登记</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>05</span><br />上传资料</p>
+						<span class="es-si-line"></span>
+					</div>
+					<div class="es-step-item">
+						<p><span>06</span><br />上传成功</p>
+						<span class="es-si-line"></span>
+					</div>
+				</div>
+				<div class="es-infoBox fl">
+					<div class="es-c-binfo es-con-type">
+					<form action="" method="post">
+						<h3 class="es-con-type-tit">请选择企业类型，一旦成功建立帐号，类型不可更改</h3>
+						<div class="es-con-type-box">
+							<ul>
+								<li>
+									<a href="#">
+										<div class="es-con-type-item es-personal-t">
+											<div class="es-ct-img"></div>
+											<p class="es-ct-txt">个体户</p>
+											<span class="es-ct-icons"></span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="es-con-type-item es-company-t">
+											<div class="es-ct-img"></div>
+											<p class="es-ct-txt">企业</p>
+											<span class="es-ct-icons"></span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主体结束-->
+		<div class="es-tfooter">
+			<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+		</div>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		function click_clear_ipt(one,two){
+			one.on("click",function(){
+				if(one.hasClass("errIcon")){two.val("");$(two)[0].focus();};
+			});
+		}
+		function focus_input(one,two){
+			$(one).on("keydown",function(e){
+				var key = window.event ? e.keyCode:e.which;
+				if(key==13){$(two)[0].focus();};
+			});
+		}
+		function focus_submit(one,callback){
+			$(one).on("keydown",function(e){
+				var key = window.event ? e.keyCode:e.which;
+				if(key==13){callback()};
+			});
+		}
+	localStorage&&localStorage.phome&&$('#phoNum').val(localStorage.phome);
+	click_clear_ipt($("#phoNum").next(),$("#phoNum"));
+	click_clear_ipt($("#psw").next(),$("#psw"));
+	focus_input("#phoNum","#psw");
+	focus_submit("#psw",function(){
+		$(".sub").click();
+	});
+function _error_ipt(ele,str,html){str?$(ele).css("display","block").stop().fadeIn(0).fadeOut(8000):$(ele).css("display","none");html&&($(ele).find("p").html('<span class="login_jg"></span> '+html))}
+	var obj_login={
+		phome:false,
+		password:false
+	}
+	$(".login_tipicon").removeClass("login_tipicon");
+	$("#phoNum").on("blur",function(){
+		var telReg = !!this.value.match(/^1[0-9]{10}$/);
+		if(telReg == false){
+			// $("#login_tipword_phoNum").css("display","block").find("p").html('<span class="login_jg"></span>&nbsp;手机号必须为11位数字');
+			_error_ipt("#login_tipword_phoNum","1",'手机号必须为11位数字')
+			$(this).next("span").addClass("errIcon login_tipicon");
+			if(telReg==""){_error_ipt("#login_tipword_phoNum","1",'请输入注册的手机号码')}
+			obj_login.phome=false;
+		}else{
+			$("#login_tipword_phoNum").css("display","none");
+			$(this).next("span").addClass("login_tipicon").removeClass("errIcon");
+			obj_login.phome=true;
+		}
+	})
+	$("#phoNum").on("focus",function(e){
+		$(".error_box").slideUp();
+		$("#login_tipword_phoNum").css("display","none");
+		$(this).next("span").removeClass("errIcon").removeClass("login_tipicon");
+	})
+	$("#psw").on("blur",function(){
+		var telReg = !!this.value.match(/^[A-Za-z0-9\=\]\[\'\;\/\.\,\+\-\|\)\(\*\&\^\%\$\#\@\!\~\`\_\<\>\?\:\"\{\}\\]{6,18}$/);
+		var len=this.value.length;
+		var telReg2 = !this.value.match('^[A-Za-z]{'+len+'}$');
+		var telReg3 = !this.value.match('^[0-9]{'+len+'}$');
+		if(telReg == false || telReg2==false || telReg3==false ){
+			$("#login_tipword_psw").css("display","block");
+			if(telReg==false){
+				// $("#login_tipword_psw").find("p").html('<span class="login_jg"></span>&nbsp;您输入的长度不正确');
+				_error_ipt("#login_tipword_psw","1",'您输入的长度不正确')
+			}else{
+				$("#login_tipword_psw").find("p").html('<span class="login_jg"></span>&nbsp;您输入的格式不正确');
+				_error_ipt("#login_tipword_psw","1",'您输入的格式不正确')
+			}
+			$(this).next("span").addClass("errIcon login_tipicon");
+			obj_login.password=false;
+		}else{
+			$("#login_tipword_psw").css("display","none");
+			$(this).next("span").addClass("login_tipicon").removeClass("errIcon");
+			obj_login.password=true;
+		}
+		if(this.value==""){
+			// $("#login_tipword_psw").find("p").html('<span class="login_jg"></span>&nbsp;请输入登录密码');
+			_error_ipt("#login_tipword_psw","1",'请输入登录密码')
+		}
+	})
+	$("#psw").on("focus",function(){
+		_key(this);
+		$(".error_box").slideUp();
+		$("#login_tipword_psw").css("display","none");
+		$(this).next("span").removeClass("errIcon").removeClass("login_tipicon");
+	})
+	</script>
+	</body>
+</html>

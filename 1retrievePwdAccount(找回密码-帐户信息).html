@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>申请证书</title>
+    <link href="css/esStyle.css" rel="stylesheet"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/ecJs.js"></script>
+    <script src="js/esValidate.js"></script>
+</head>
+<body>
+<div id="esHeader" class="es-comWidth clearFiex">
+    <div class="es-logo-area clearFiex fl">
+        <a class="es-logo-a fl" href="javascript:;"></a>
+
+        <h2 class="fl">恒善普惠 · 企业服务管理系统 </h2>
+    </div>
+    <ul class="es-nav fl">
+        <li class="active">企业管理</li>
+        <li>修改密码</li>
+    </ul>
+    <div class="es-login-info fr"><span>欢迎您，<font>admin</font></span><a href="javascript:;">退出</a></div>
+</div>
+<!--头部结束-->
+
+<!--主体开始-->
+<div class="es-tcon">
+	<div class="es-containBox">
+		<div class="es-pwd-box">
+			<ul class="es-pwd-index eq1">
+				<li>1.账户信息</li>
+				<li class="es-gray">2.重置密码</li>
+				<li class="es-gray">3.修改成功</li>
+			</ul>
+			<ul class="es-pwd-acco">
+				<li><label for="phone">手机号</label><input id="phone" class="es-pwd-input" type="text" placeholder="请输入注册时填写的手机号">
+					<span class="es-error-msg es-error es-right"><em></em><span>请输入组织机构代码</span></span>
+				</li>
+				<li><label for="imgCode">验证码</label><input id="imgCode" class="es-pwd-input es-code" type="text" placeholder="请输入验证码"><img src="" alt="" class="es-img-code"><span class="es-tiptxt">看不清，换一张！</span>
+					<span class="es-error-msg es-error"><em></em><span>请输入组织机构代码</span></span>
+				</li>
+				<li><label for=""></label><span class="es-btn">提交</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--主体结束-->
+<div class="es-tfooter">
+	<p>北京恒善普惠信息咨询有效公司  |  ©2016 squcorp.com All Rights Reserved  |  京ICP备 xxxxxx 号  |  京公网安备 xxxxxx</p>
+</div>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//样式---边框变颜色
+$(".es-pwd-input").on("focus", function () {$(this).addClass("active");});
+$(".es-pwd-input").on("blur", function () {$(this).removeClass("active");});
+//提交并且验证
+$(".sub").on("click",function(){
+	if(phone() && imgCode()){
+		$(".sub").off("click");
+		alert("成立");
+	}
+});
+//每步验证
+var iMv = new mValidate();
+$("#phone").on("blur",phone);
+$("#imgCode").on("blur",imgCode);
+function phone(){
+	var iObj = $("#phone").siblings(".es-error-msg");
+	if (!iMv.isEmpty($("#phone").val())) {//验证空
+	    errorInfoShow(iObj, "请输入手机号");
+	    return false;
+	}
+	if (!iMv.mobile($("#phone").val())) {//验证格式
+	    errorInfoShow(iObj, "手机号格式错误");
+	    return false;
+	}else{
+	    errorInfoShow(iObj, "");
+	    return true;
+	}
+}
+function imgCode(){
+    var iObj = $("#imgCode").siblings(".es-error-msg");
+    if (!iMv.isEmpty($("#imgCode").val())) {//验证空
+        errorInfoShow(iObj, "请输入验证码");
+        return false;
+    }
+    if (!iMv.isImgCode($("#imgCode").val())) {//验证格式
+        errorInfoShow(iObj, "图片验证码错误");
+        return false;
+    }else{
+        errorInfoShow(iObj, "");
+        return true;
+    }
+}
+</script>
+</body>
+</html>
